@@ -17,10 +17,6 @@
 		F516B28E1A708290001465A7 /* OldCalculator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = OldCalculator; sourceTree = "<group>"; };
 		F5184B4E1A2D24B3008EA1F2 /* Paths */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paths; sourceTree = "<group>"; };
 		F5184B551A2D3CFE008EA1F2 /* RoundButton */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RoundButton; sourceTree = "<group>"; };
-		F526894E1A0D928200CBCD05 /* CyanCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CyanCenterCircle; sourceTree = "<group>"; };
-		F526894F1A0D928200CBCD05 /* CyanCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CyanCenterRectangle; sourceTree = "<group>"; };
-		F52689501A0D928200CBCD05 /* CyanRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CyanRectangle; sourceTree = "<group>"; };
-		F52689511A0D92B300CBCD05 /* CyanCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CyanCircle; sourceTree = "<group>"; };
 		F526F7B519B6753300A32D8E /* BlueCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterCircle; sourceTree = "<group>"; };
 		F526F7B619B6753300A32D8E /* BlueCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterRectangle; sourceTree = "<group>"; };
 		F526F7B719B6753300A32D8E /* BlueCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCircle; sourceTree = "<group>"; };
@@ -34,17 +30,12 @@
 		F526F7C319B6753400A32D8E /* GrayCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GrayCircle; sourceTree = "<group>"; };
 		F526F7C419B6753400A32D8E /* GrayRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GrayRectangle; sourceTree = "<group>"; };
 		F526F7C519B6753400A32D8E /* GreenCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GreenCenterCircle; sourceTree = "<group>"; };
-		F526F7C619B6753400A32D8E /* GreenCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GreenCenterRectangle; sourceTree = "<group>"; };
 		F526F7C719B6753400A32D8E /* GreenCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GreenCircle; sourceTree = "<group>"; };
 		F526F7C819B6753400A32D8E /* GreenRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GreenRectangle; sourceTree = "<group>"; };
 		F526F7CF19B6753400A32D8E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		F526F7D019B6753400A32D8E /* RedCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCenterCircle; sourceTree = "<group>"; };
 		F526F7D119B6753400A32D8E /* RedCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCenterRectangle; sourceTree = "<group>"; };
 		F526F7D219B6753400A32D8E /* RedCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCircle; sourceTree = "<group>"; };
-		F526F7D419B6753400A32D8E /* YellowCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YellowCenterCircle; sourceTree = "<group>"; };
-		F526F7D519B6753400A32D8E /* YellowCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YellowCenterRectangle; sourceTree = "<group>"; };
-		F526F7D619B6753400A32D8E /* YellowCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YellowCircle; sourceTree = "<group>"; };
-		F526F7D719B6753400A32D8E /* YellowRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YellowRectangle; sourceTree = "<group>"; };
 		F52D8EBA1A3A9A0300B5A4A5 /* UIViewController */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIViewController; sourceTree = "<group>"; };
 		F5C04ECC1A43A8F000185DD9 /* AnimationGradients */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AnimationGradients; sourceTree = "<group>"; };
 		F5C17AB81A25586400A5FA0F /* Layers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Layers; sourceTree = "<group>"; };
@@ -73,17 +64,12 @@
 				4C2681FA18BE81C800124602 /* Calculator */,
 				4CA2BEAE18EF67CD007A0542 /* ColorSpace */,
 				4C2681F718BE81C800124602 /* Console */,
-				F526894E1A0D928200CBCD05 /* CyanCenterCircle */,
-				F526894F1A0D928200CBCD05 /* CyanCenterRectangle */,
-				F52689511A0D92B300CBCD05 /* CyanCircle */,
-				F52689501A0D928200CBCD05 /* CyanRectangle */,
 				C52A7B6418F3A7E5005E9FE5 /* Gradients */,
 				F526F7C119B6753400A32D8E /* GrayCenterCircle */,
 				F526F7C219B6753400A32D8E /* GrayCenterRectangle */,
 				F526F7C319B6753400A32D8E /* GrayCircle */,
 				F526F7C419B6753400A32D8E /* GrayRectangle */,
 				F526F7C519B6753400A32D8E /* GreenCenterCircle */,
-				F526F7C619B6753400A32D8E /* GreenCenterRectangle */,
 				F526F7C719B6753400A32D8E /* GreenCircle */,
 				F526F7C819B6753400A32D8E /* GreenRectangle */,
 				C5B8DD4819313E5C003B22FE /* Images */,
@@ -103,10 +89,6 @@
 				F5C17AB91A2559F600A5FA0F /* Template */,
 				F5CE381C1A365BFD00B5A0FF /* UIImage */,
 				F52D8EBA1A3A9A0300B5A4A5 /* UIViewController */,
-				F526F7D419B6753400A32D8E /* YellowCenterCircle */,
-				F526F7D519B6753400A32D8E /* YellowCenterRectangle */,
-				F526F7D619B6753400A32D8E /* YellowCircle */,
-				F526F7D719B6753400A32D8E /* YellowRectangle */,
 			);
 			sourceTree = "<group>";
 		};
