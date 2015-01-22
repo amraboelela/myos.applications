@@ -1,0 +1,11 @@
+{
+    "page" : {
+        "pageNumber": 1,
+        "xLocation": 3,
+        "yLocation": 3,
+        "anchored": 1
+    }
+    "application" : {
+        "score": 5
+    }
+}

@@ -1,0 +1,164 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		4C2681F718BE81C800124602 /* Console */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Console; sourceTree = "<group>"; };
+		4C2681F918BE81C800124602 /* RedRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedRectangle; sourceTree = "<group>"; };
+		4C2681FA18BE81C800124602 /* Calculator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Calculator; sourceTree = "<group>"; };
+		4CA2BEAE18EF67CD007A0542 /* ColorSpace */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ColorSpace; sourceTree = "<group>"; };
+		C52A7B6418F3A7E5005E9FE5 /* Gradients */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Gradients; sourceTree = "<group>"; };
+		C5B8DD4819313E5C003B22FE /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		F516B28D1A7058A9001465A7 /* MultiApple */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MultiApple; sourceTree = "<group>"; };
+		F516B28E1A708290001465A7 /* OldCalculator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = OldCalculator; sourceTree = "<group>"; };
+		F5184B4E1A2D24B3008EA1F2 /* Paths */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paths; sourceTree = "<group>"; };
+		F5184B551A2D3CFE008EA1F2 /* RoundButton */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RoundButton; sourceTree = "<group>"; };
+		F526894E1A0D928200CBCD05 /* CyanCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CyanCenterCircle; sourceTree = "<group>"; };
+		F526894F1A0D928200CBCD05 /* CyanCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CyanCenterRectangle; sourceTree = "<group>"; };
+		F52689501A0D928200CBCD05 /* CyanRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CyanRectangle; sourceTree = "<group>"; };
+		F52689511A0D92B300CBCD05 /* CyanCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CyanCircle; sourceTree = "<group>"; };
+		F526F7B519B6753300A32D8E /* BlueCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterCircle; sourceTree = "<group>"; };
+		F526F7B619B6753300A32D8E /* BlueCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterRectangle; sourceTree = "<group>"; };
+		F526F7B719B6753300A32D8E /* BlueCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCircle; sourceTree = "<group>"; };
+		F526F7B819B6753300A32D8E /* BlueRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueRectangle; sourceTree = "<group>"; };
+		F526F7B919B6753300A32D8E /* BrownCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BrownCenterCircle; sourceTree = "<group>"; };
+		F526F7BA19B6753300A32D8E /* BrownCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BrownCenterRectangle; sourceTree = "<group>"; };
+		F526F7BB19B6753300A32D8E /* BrownCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BrownCircle; sourceTree = "<group>"; };
+		F526F7BC19B6753300A32D8E /* BrownRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BrownRectangle; sourceTree = "<group>"; };
+		F526F7C119B6753400A32D8E /* GrayCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GrayCenterCircle; sourceTree = "<group>"; };
+		F526F7C219B6753400A32D8E /* GrayCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GrayCenterRectangle; sourceTree = "<group>"; };
+		F526F7C319B6753400A32D8E /* GrayCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GrayCircle; sourceTree = "<group>"; };
+		F526F7C419B6753400A32D8E /* GrayRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GrayRectangle; sourceTree = "<group>"; };
+		F526F7C519B6753400A32D8E /* GreenCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GreenCenterCircle; sourceTree = "<group>"; };
+		F526F7C619B6753400A32D8E /* GreenCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GreenCenterRectangle; sourceTree = "<group>"; };
+		F526F7C719B6753400A32D8E /* GreenCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GreenCircle; sourceTree = "<group>"; };
+		F526F7C819B6753400A32D8E /* GreenRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GreenRectangle; sourceTree = "<group>"; };
+		F526F7CF19B6753400A32D8E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		F526F7D019B6753400A32D8E /* RedCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCenterCircle; sourceTree = "<group>"; };
+		F526F7D119B6753400A32D8E /* RedCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCenterRectangle; sourceTree = "<group>"; };
+		F526F7D219B6753400A32D8E /* RedCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCircle; sourceTree = "<group>"; };
+		F526F7D419B6753400A32D8E /* YellowCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YellowCenterCircle; sourceTree = "<group>"; };
+		F526F7D519B6753400A32D8E /* YellowCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YellowCenterRectangle; sourceTree = "<group>"; };
+		F526F7D619B6753400A32D8E /* YellowCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YellowCircle; sourceTree = "<group>"; };
+		F526F7D719B6753400A32D8E /* YellowRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YellowRectangle; sourceTree = "<group>"; };
+		F52D8EBA1A3A9A0300B5A4A5 /* UIViewController */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIViewController; sourceTree = "<group>"; };
+		F5C04ECC1A43A8F000185DD9 /* AnimationGradients */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AnimationGradients; sourceTree = "<group>"; };
+		F5C17AB81A25586400A5FA0F /* Layers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Layers; sourceTree = "<group>"; };
+		F5C17AB91A2559F600A5FA0F /* Template */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Template; sourceTree = "<group>"; };
+		F5CE38191A36300B00B5A0FF /* Shadows */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shadows; sourceTree = "<group>"; };
+		F5CE381A1A3635D700B5A0FF /* Shapes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shapes; sourceTree = "<group>"; };
+		F5CE381B1A364D2400B5A0FF /* Text */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Text; sourceTree = "<group>"; };
+		F5CE381C1A365BFD00B5A0FF /* UIImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIImage; sourceTree = "<group>"; };
+		F5F0FFAC1A51E017001315A5 /* BigApple */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BigApple; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		4C2681F018BE817B00124602 = {
+			isa = PBXGroup;
+			children = (
+				F5C04ECC1A43A8F000185DD9 /* AnimationGradients */,
+				F5F0FFAC1A51E017001315A5 /* BigApple */,
+				F526F7B519B6753300A32D8E /* BlueCenterCircle */,
+				F526F7B619B6753300A32D8E /* BlueCenterRectangle */,
+				F526F7B719B6753300A32D8E /* BlueCircle */,
+				F526F7B819B6753300A32D8E /* BlueRectangle */,
+				F526F7B919B6753300A32D8E /* BrownCenterCircle */,
+				F526F7BA19B6753300A32D8E /* BrownCenterRectangle */,
+				F526F7BB19B6753300A32D8E /* BrownCircle */,
+				F526F7BC19B6753300A32D8E /* BrownRectangle */,
+				4C2681FA18BE81C800124602 /* Calculator */,
+				4CA2BEAE18EF67CD007A0542 /* ColorSpace */,
+				4C2681F718BE81C800124602 /* Console */,
+				F526894E1A0D928200CBCD05 /* CyanCenterCircle */,
+				F526894F1A0D928200CBCD05 /* CyanCenterRectangle */,
+				F52689511A0D92B300CBCD05 /* CyanCircle */,
+				F52689501A0D928200CBCD05 /* CyanRectangle */,
+				C52A7B6418F3A7E5005E9FE5 /* Gradients */,
+				F526F7C119B6753400A32D8E /* GrayCenterCircle */,
+				F526F7C219B6753400A32D8E /* GrayCenterRectangle */,
+				F526F7C319B6753400A32D8E /* GrayCircle */,
+				F526F7C419B6753400A32D8E /* GrayRectangle */,
+				F526F7C519B6753400A32D8E /* GreenCenterCircle */,
+				F526F7C619B6753400A32D8E /* GreenCenterRectangle */,
+				F526F7C719B6753400A32D8E /* GreenCircle */,
+				F526F7C819B6753400A32D8E /* GreenRectangle */,
+				C5B8DD4819313E5C003B22FE /* Images */,
+				F5C17AB81A25586400A5FA0F /* Layers */,
+				F516B28D1A7058A9001465A7 /* MultiApple */,
+				F516B28E1A708290001465A7 /* OldCalculator */,
+				F526F7CF19B6753400A32D8E /* README.md */,
+				F5184B4E1A2D24B3008EA1F2 /* Paths */,
+				F5CE38191A36300B00B5A0FF /* Shadows */,
+				F5CE381A1A3635D700B5A0FF /* Shapes */,
+				F5CE381B1A364D2400B5A0FF /* Text */,
+				F526F7D019B6753400A32D8E /* RedCenterCircle */,
+				F526F7D119B6753400A32D8E /* RedCenterRectangle */,
+				F526F7D219B6753400A32D8E /* RedCircle */,
+				4C2681F918BE81C800124602 /* RedRectangle */,
+				F5184B551A2D3CFE008EA1F2 /* RoundButton */,
+				F5C17AB91A2559F600A5FA0F /* Template */,
+				F5CE381C1A365BFD00B5A0FF /* UIImage */,
+				F52D8EBA1A3A9A0300B5A4A5 /* UIViewController */,
+				F526F7D419B6753400A32D8E /* YellowCenterCircle */,
+				F526F7D519B6753400A32D8E /* YellowCenterRectangle */,
+				F526F7D619B6753400A32D8E /* YellowCircle */,
+				F526F7D719B6753400A32D8E /* YellowRectangle */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		4C2681F118BE817B00124602 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 4C2681F418BE817B00124602 /* Build configuration list for PBXProject "applications" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4C2681F018BE817B00124602;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		4C2681F518BE817B00124602 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		4C2681F618BE817B00124602 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C2681F418BE817B00124602 /* Build configuration list for PBXProject "applications" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C2681F518BE817B00124602 /* Debug */,
+				4C2681F618BE817B00124602 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C2681F118BE817B00124602 /* Project object */;
+}
