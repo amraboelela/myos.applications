@@ -17,7 +17,7 @@
 
 APP_NAME=Gradients
 CFLAGS=-DDEBUG -fblocks
-LDLIBS= -llog -lCoreFoundation -lFoundation -lOpenGLES -lUIKit -lCoreGraphics -lCoreAnimation
+LDLIBS= -llog -lCoreFoundation -lFoundation -lOpenGLES -lUIKit -lCoreGraphics -lQuartzCore
 OBJECTS = \
     main.o \
     AppDelegate.o \

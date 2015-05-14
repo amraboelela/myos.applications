@@ -16,7 +16,7 @@
  */
 
 #import "MyUIViewController.h"
-#import <CoreAnimation/CoreAnimation.h>
+#import <QuartzCore/QuartzCore.h>
 
 #define kBigAppleFrame CGRectMake(20,20,206,206)
 

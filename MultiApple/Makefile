@@ -17,7 +17,7 @@
 
 APP_NAME=MultiApple
 CFLAGS=-DDEBUG -fblocks
-LDLIBS= -llog -lCoreFoundation -lFoundation -lOpenGLES -lCoreAnimation -lUIKit -lCoreGraphics
+LDLIBS= -llog -lCoreFoundation -lFoundation -lOpenGLES -lQuartzCore -lUIKit -lCoreGraphics
 
 OBJECTS = \
     main.o \

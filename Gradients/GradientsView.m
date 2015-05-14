@@ -18,7 +18,7 @@
 #import "GradientsView.h"
 #import <time.h>
 #import <stdlib.h>
-#import <CoreAnimation/CAGradientLayer-private.h>
+#import <QuartzCore/CAGradientLayer-private.h>
 
 #define kStartGreenGradientColor    [UIColor colorWithRed:20.0/255. green:152.0/255. blue:36.0/255. alpha:0.0]
 #define kMiddleGreenGradientColor   [UIColor colorWithRed:10.0/255. green:96.0/255. blue:12.0/255. alpha:0.5]

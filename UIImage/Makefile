@@ -17,7 +17,7 @@
 
 APP_NAME=UIImage
 CFLAGS=-DDEBUG -fblocks
-LDLIBS= -llog -lCoreFoundation -lFoundation -lOpenGLES -lUIKit -lCoreAnimation -lCoreGraphics
+LDLIBS= -llog -lCoreFoundation -lFoundation -lOpenGLES -lUIKit -lQuartzCore -lCoreGraphics
 OBJECTS = \
     main.o \
     AppDelegate.o \
