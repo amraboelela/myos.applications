@@ -27,4 +27,4 @@ OBJECTS = \
     AppDelegate.o \
     ShapesView.o \
 
-include ${MYOS_PATH}/sdk/Makefile
+include ${MYOS_PATH}/sdk/app-makefile
