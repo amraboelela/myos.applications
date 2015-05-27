@@ -9,9 +9,6 @@
 /* Begin PBXFileReference section */
 		4C2681F718BE81C800124602 /* Console */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Console; sourceTree = "<group>"; };
 		4C2681FA18BE81C800124602 /* Calculator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Calculator; sourceTree = "<group>"; };
-		4CA2BEAE18EF67CD007A0542 /* ColorSpace */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ColorSpace; sourceTree = "<group>"; };
-		C52A7B6418F3A7E5005E9FE5 /* Gradients */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Gradients; sourceTree = "<group>"; };
-		C5B8DD4819313E5C003B22FE /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		F516B28D1A7058A9001465A7 /* MultiApple */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MultiApple; sourceTree = "<group>"; };
 		F5184B4E1A2D24B3008EA1F2 /* Paths */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paths; sourceTree = "<group>"; };
 		F5184B551A2D3CFE008EA1F2 /* RoundButton */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RoundButton; sourceTree = "<group>"; };
@@ -59,9 +56,7 @@
 				F526F7BB19B6753300A32D8E /* BrownCircle */,
 				F526F7BC19B6753300A32D8E /* BrownRectangle */,
 				4C2681FA18BE81C800124602 /* Calculator */,
-				4CA2BEAE18EF67CD007A0542 /* ColorSpace */,
 				4C2681F718BE81C800124602 /* Console */,
-				C52A7B6418F3A7E5005E9FE5 /* Gradients */,
 				F526F7C119B6753400A32D8E /* GrayCenterCircle */,
 				F526F7C219B6753400A32D8E /* GrayCenterRectangle */,
 				F526F7C319B6753400A32D8E /* GrayCircle */,
@@ -69,7 +64,6 @@
 				F526F7C519B6753400A32D8E /* GreenCenterCircle */,
 				F526F7C719B6753400A32D8E /* GreenCircle */,
 				F526F7C819B6753400A32D8E /* GreenRectangle */,
-				C5B8DD4819313E5C003B22FE /* Images */,
 				F5C17AB81A25586400A5FA0F /* Layers */,
 				F516B28D1A7058A9001465A7 /* MultiApple */,
 				F526F7CF19B6753400A32D8E /* README.md */,
