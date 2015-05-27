@@ -18,6 +18,6 @@
 # Copy this file to config.sh When your target is ChildApp
 
 #This means it is a ChildApp running from inside myApps
-export TARGET=ChildApp
+export APP_TYPE=ChildApp
 
 export DEBUG_MODE=YES

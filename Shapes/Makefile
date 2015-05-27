@@ -17,7 +17,7 @@
 
 LDLIBS=-lFoundation
 
-ifeq ($(TARGET),NativeApp)
+ifeq ($(APP_TYPE),NativeApp)
     LDLIBS+=-lNAOpenGLES -lNAUIKit -lNACoreGraphics -lNAQuartzCore
 else
     LDLIBS+=-lOpenGLES -lUIKit -lCoreGraphics -lQuartzCore
