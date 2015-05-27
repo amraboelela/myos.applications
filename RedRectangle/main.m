@@ -21,5 +21,9 @@
 
 int main(int argc, char *argv[])
 {
+#ifdef NATIVE_APP
     return UIApplicationMain(argc, argv, nil, @"AppDelegate");
+#else
+    return _UIApplicationMain(argc, argv, nil, @"AppDelegate");
+#endif
 }
