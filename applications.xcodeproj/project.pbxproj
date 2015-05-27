@@ -14,7 +14,6 @@
 		C52A7B6418F3A7E5005E9FE5 /* Gradients */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Gradients; sourceTree = "<group>"; };
 		C5B8DD4819313E5C003B22FE /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		F516B28D1A7058A9001465A7 /* MultiApple */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MultiApple; sourceTree = "<group>"; };
-		F516B28E1A708290001465A7 /* OldCalculator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = OldCalculator; sourceTree = "<group>"; };
 		F5184B4E1A2D24B3008EA1F2 /* Paths */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paths; sourceTree = "<group>"; };
 		F5184B551A2D3CFE008EA1F2 /* RoundButton */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RoundButton; sourceTree = "<group>"; };
 		F526F7B519B6753300A32D8E /* BlueCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterCircle; sourceTree = "<group>"; };
@@ -39,7 +38,6 @@
 		F52D8EBA1A3A9A0300B5A4A5 /* UIViewController */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIViewController; sourceTree = "<group>"; };
 		F5C04ECC1A43A8F000185DD9 /* AnimationGradients */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AnimationGradients; sourceTree = "<group>"; };
 		F5C17AB81A25586400A5FA0F /* Layers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Layers; sourceTree = "<group>"; };
-		F5C17AB91A2559F600A5FA0F /* Template */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Template; sourceTree = "<group>"; };
 		F5CE38191A36300B00B5A0FF /* Shadows */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shadows; sourceTree = "<group>"; };
 		F5CE381A1A3635D700B5A0FF /* Shapes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shapes; sourceTree = "<group>"; };
 		F5CE381B1A364D2400B5A0FF /* Text */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Text; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 				C5B8DD4819313E5C003B22FE /* Images */,
 				F5C17AB81A25586400A5FA0F /* Layers */,
 				F516B28D1A7058A9001465A7 /* MultiApple */,
-				F516B28E1A708290001465A7 /* OldCalculator */,
 				F526F7CF19B6753400A32D8E /* README.md */,
 				F5184B4E1A2D24B3008EA1F2 /* Paths */,
 				F5CE38191A36300B00B5A0FF /* Shadows */,
@@ -86,7 +83,6 @@
 				F526F7D219B6753400A32D8E /* RedCircle */,
 				4C2681F918BE81C800124602 /* RedRectangle */,
 				F5184B551A2D3CFE008EA1F2 /* RoundButton */,
-				F5C17AB91A2559F600A5FA0F /* Template */,
 				F5CE381C1A365BFD00B5A0FF /* UIImage */,
 				F52D8EBA1A3A9A0300B5A4A5 /* UIViewController */,
 			);

@@ -15,4 +15,4 @@
 # Amr Aboelela <amraboelela@gmail.com>
 #
 
-source ${MYOS_PATH}/android/sdk/scripts/nativeApp-clean.sh
+source ${MYOS_PATH}/android/sdk/scripts/childApp-clean.sh

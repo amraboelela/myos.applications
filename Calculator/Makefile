@@ -15,13 +15,17 @@
 # Amr Aboelela <amraboelela@gmail.com>
 #
 
-APP_NAME=Calculator
-CFLAGS=-DDEBUG -fblocks
-LDLIBS= -llog -lCoreFoundation -lFoundation -lOpenGLES -lUIKit -lCoreGraphics
+LDLIBS=-lFoundation
+
+ifeq ($(TARGET),NativeApp)
+    LDLIBS+=-lNAOpenGLES -lNAUIKit -lNACoreGraphics -lNAQuartzCore
+else
+    LDLIBS+=-lOpenGLES -lUIKit -lCoreGraphics -lQuartzCore
+endif
+
 OBJECTS = \
-    main.o \
     AppDelegate.o \
     CalcBrain.o \
     CalcFace.o \
 
-include ${MYOS_PATH}/android/sdk/resources/makefile-executable
+include ${MYOS_PATH}/sdk/Makefile

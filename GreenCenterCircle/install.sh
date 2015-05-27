@@ -15,5 +15,5 @@
 # Amr Aboelela <amraboelela@gmail.com>
 #
 
-TARGET=NativeApp
-source ${MYOS_PATH}/android/sdk/scripts/nativeApp-install.sh
+TARGET=childApp
+source ${MYOS_PATH}/android/sdk/scripts/childApp-install.sh

@@ -15,7 +15,7 @@
 # Amr Aboelela <amraboelela@gmail.com>
 #
 
-TARGET=NativeApp
+TARGET=childApp
 
 APPLICATION_DIRECTORY=$(pwd | awk -F'/' '{print $NF}')
 
