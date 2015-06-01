@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		4C2681F718BE81C800124602 /* Console */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Console; sourceTree = "<group>"; };
 		4C2681FA18BE81C800124602 /* Calculator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Calculator; sourceTree = "<group>"; };
 		F516B28D1A7058A9001465A7 /* MultiApple */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MultiApple; sourceTree = "<group>"; };
 		F526F7B519B6753300A32D8E /* BlueCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterCircle; sourceTree = "<group>"; };
@@ -44,7 +43,6 @@
 				F526F7BB19B6753300A32D8E /* BrownCircle */,
 				F526F7BC19B6753300A32D8E /* BrownRectangle */,
 				4C2681FA18BE81C800124602 /* Calculator */,
-				4C2681F718BE81C800124602 /* Console */,
 				F526F7C119B6753400A32D8E /* GrayCenterCircle */,
 				F526F7C219B6753400A32D8E /* GrayCenterRectangle */,
 				F526F7C319B6753400A32D8E /* GrayCircle */,
