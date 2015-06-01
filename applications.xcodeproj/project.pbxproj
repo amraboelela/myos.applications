@@ -10,7 +10,6 @@
 		4C2681F718BE81C800124602 /* Console */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Console; sourceTree = "<group>"; };
 		4C2681FA18BE81C800124602 /* Calculator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Calculator; sourceTree = "<group>"; };
 		F516B28D1A7058A9001465A7 /* MultiApple */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MultiApple; sourceTree = "<group>"; };
-		F5184B551A2D3CFE008EA1F2 /* RoundButton */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RoundButton; sourceTree = "<group>"; };
 		F526F7B519B6753300A32D8E /* BlueCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterCircle; sourceTree = "<group>"; };
 		F526F7B619B6753300A32D8E /* BlueCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterRectangle; sourceTree = "<group>"; };
 		F526F7B819B6753300A32D8E /* BlueRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueRectangle; sourceTree = "<group>"; };
@@ -29,12 +28,6 @@
 		F526F7D019B6753400A32D8E /* RedCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCenterCircle; sourceTree = "<group>"; };
 		F526F7D119B6753400A32D8E /* RedCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCenterRectangle; sourceTree = "<group>"; };
 		F526F7D219B6753400A32D8E /* RedCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCircle; sourceTree = "<group>"; };
-		F52D8EBA1A3A9A0300B5A4A5 /* UIViewController */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIViewController; sourceTree = "<group>"; };
-		F5C04ECC1A43A8F000185DD9 /* AnimationGradients */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AnimationGradients; sourceTree = "<group>"; };
-		F5CE38191A36300B00B5A0FF /* Shadows */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shadows; sourceTree = "<group>"; };
-		F5CE381A1A3635D700B5A0FF /* Shapes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shapes; sourceTree = "<group>"; };
-		F5CE381B1A364D2400B5A0FF /* Text */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Text; sourceTree = "<group>"; };
-		F5CE381C1A365BFD00B5A0FF /* UIImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIImage; sourceTree = "<group>"; };
 		F5F0FFAC1A51E017001315A5 /* BigApple */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BigApple; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,7 +35,6 @@
 		4C2681F018BE817B00124602 = {
 			isa = PBXGroup;
 			children = (
-				F5C04ECC1A43A8F000185DD9 /* AnimationGradients */,
 				F5F0FFAC1A51E017001315A5 /* BigApple */,
 				F526F7B519B6753300A32D8E /* BlueCenterCircle */,
 				F526F7B619B6753300A32D8E /* BlueCenterRectangle */,
@@ -62,15 +54,9 @@
 				F526F7C819B6753400A32D8E /* GreenRectangle */,
 				F516B28D1A7058A9001465A7 /* MultiApple */,
 				F526F7CF19B6753400A32D8E /* README.md */,
-				F5CE38191A36300B00B5A0FF /* Shadows */,
-				F5CE381A1A3635D700B5A0FF /* Shapes */,
-				F5CE381B1A364D2400B5A0FF /* Text */,
 				F526F7D019B6753400A32D8E /* RedCenterCircle */,
 				F526F7D119B6753400A32D8E /* RedCenterRectangle */,
 				F526F7D219B6753400A32D8E /* RedCircle */,
-				F5184B551A2D3CFE008EA1F2 /* RoundButton */,
-				F5CE381C1A365BFD00B5A0FF /* UIImage */,
-				F52D8EBA1A3A9A0300B5A4A5 /* UIViewController */,
 			);
 			sourceTree = "<group>";
 		};
