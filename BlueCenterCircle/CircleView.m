@@ -16,6 +16,7 @@
  */
 
 #import "CircleView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation CircleView
 
