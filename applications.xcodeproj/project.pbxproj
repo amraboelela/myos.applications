@@ -8,7 +8,6 @@
 
 /* Begin PBXFileReference section */
 		4C2681FA18BE81C800124602 /* Calculator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Calculator; sourceTree = "<group>"; };
-		F516B28D1A7058A9001465A7 /* MultiApple */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MultiApple; sourceTree = "<group>"; };
 		F526F7B519B6753300A32D8E /* BlueCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterCircle; sourceTree = "<group>"; };
 		F526F7B619B6753300A32D8E /* BlueCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterRectangle; sourceTree = "<group>"; };
 		F526F7B819B6753300A32D8E /* BlueRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueRectangle; sourceTree = "<group>"; };
@@ -27,14 +26,12 @@
 		F526F7D019B6753400A32D8E /* RedCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCenterCircle; sourceTree = "<group>"; };
 		F526F7D119B6753400A32D8E /* RedCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCenterRectangle; sourceTree = "<group>"; };
 		F526F7D219B6753400A32D8E /* RedCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCircle; sourceTree = "<group>"; };
-		F5F0FFAC1A51E017001315A5 /* BigApple */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BigApple; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		4C2681F018BE817B00124602 = {
 			isa = PBXGroup;
 			children = (
-				F5F0FFAC1A51E017001315A5 /* BigApple */,
 				F526F7B519B6753300A32D8E /* BlueCenterCircle */,
 				F526F7B619B6753300A32D8E /* BlueCenterRectangle */,
 				F526F7B819B6753300A32D8E /* BlueRectangle */,
@@ -50,7 +47,6 @@
 				F526F7C519B6753400A32D8E /* GreenCenterCircle */,
 				F526F7C719B6753400A32D8E /* GreenCircle */,
 				F526F7C819B6753400A32D8E /* GreenRectangle */,
-				F516B28D1A7058A9001465A7 /* MultiApple */,
 				F526F7CF19B6753400A32D8E /* README.md */,
 				F526F7D019B6753400A32D8E /* RedCenterCircle */,
 				F526F7D119B6753400A32D8E /* RedCenterRectangle */,
