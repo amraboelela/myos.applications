@@ -4,7 +4,9 @@
 
    Author:  Nicola Pero <n.pero@mi.flashnet.it>
    Date: 1999
-   
+   Modified by: Amr Aboelela <amraboelela@gmail.com>
+   Date: Jun 2015
+  
    This file is part of GNUstep.
    
    This program is free software; you can redistribute it and/or modify
@@ -24,6 +26,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "CalcFace.h"
+#import <QuartzCore/QuartzCore.h>
+
+#define kButtonLength	80
+
 
 //
 // Thanks to Andrew Lindesay for drawing the app icon,
@@ -59,8 +65,10 @@
     
     
     // Numbers
-    buttons[i] = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    buttons[i].frame = CGRectMake(77, 103, 34, 24);
+    buttons[i] = [UIButton buttonWithType:UIButtonTypeCustom];//UIButtonTypeRoundedRect];
+    buttons[i].frame = CGRectMake(0, _frame.size.height - kButtonLength, kButtonLength * 2, kButtonLength);
+    buttons[i].layer.borderWidth = 1;
+    buttons[i].layer.borderColor = [[UIColor blackColor] CGColor];
     //buttons[i] = [[UIButton alloc] initWithFrame:CGRectMake(77, 3, 34, 24)];
     [buttons[i] setTitle:@"0" forState:UIControlStateNormal];
     [buttons[i] setTag:i];
