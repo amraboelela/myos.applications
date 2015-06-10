@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		4C2681FA18BE81C800124602 /* Calculator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Calculator; sourceTree = "<group>"; };
+		F50F11AF1B28C012008CE587 /* Calculator2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Calculator2; sourceTree = "<group>"; };
 		F526F7B519B6753300A32D8E /* BlueCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterCircle; sourceTree = "<group>"; };
 		F526F7B619B6753300A32D8E /* BlueCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterRectangle; sourceTree = "<group>"; };
 		F526F7B819B6753300A32D8E /* BlueRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueRectangle; sourceTree = "<group>"; };
@@ -40,6 +41,7 @@
 				F526F7BB19B6753300A32D8E /* BrownCircle */,
 				F526F7BC19B6753300A32D8E /* BrownRectangle */,
 				4C2681FA18BE81C800124602 /* Calculator */,
+				F50F11AF1B28C012008CE587 /* Calculator2 */,
 				F526F7C119B6753400A32D8E /* GrayCenterCircle */,
 				F526F7C219B6753400A32D8E /* GrayCenterRectangle */,
 				F526F7C319B6753400A32D8E /* GrayCircle */,

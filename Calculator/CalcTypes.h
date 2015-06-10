@@ -21,6 +21,9 @@
    along with this program; if not, write to the Free Software
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA. */
 
+#ifndef CALC_TYPES
+#define CALC_TYPES
+
 typedef enum {
   none, 
   addition, 
@@ -28,3 +31,5 @@ typedef enum {
   multiplication,
   division
 } calcOperation;
+
+#endif /* CALC_TYPES */

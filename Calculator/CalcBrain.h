@@ -20,31 +20,29 @@
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA. */
-
-#import "CalcTypes.h"
-
+#include "CalcTypes.h"
 @class CalcFace;
 
-@interface CalcBrain: NSObject {
-    CalcFace *face;
-    double result;
-    double enteredNumber;
-    calcOperation operation;
-    int fractionalDigits;
-    BOOL decimalSeparator;
-    BOOL editing;
+@interface CalcBrain: NSObject
+{
+  CalcFace *face;
+  double result;
+  double enteredNumber;
+  calcOperation operation;
+  int fractionalDigits;
+  BOOL decimalSeparator;
+  BOOL editing;
 }
-
 // Set the corresponding face
-- (void)setFace:(CalcFace *)aFace;
+-(void) setFace: (CalcFace *)aFace;
 // The various buttons 
-- (void)clear:(id)sender;
-- (void)equal:(id)sender;
-- (void)digit:(id)sender;
-- (void)decimalSeparator:(id)sender;
-- (void)operation:(id)sender;
-- (void)squareRoot:(id)sender;
+-(void) clear: (id)sender;
+-(void) equal: (id)sender;
+-(void) digit: (id)sender;
+-(void) decimalSeparator: (id)sender;
+-(void) operation: (id)sender;
+-(void) squareRoot: (id)sender;
 // Jump here on calculation errors
-- (void)error;
-
+-(void) error;
 @end
+

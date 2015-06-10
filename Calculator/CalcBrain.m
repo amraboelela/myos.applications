@@ -20,185 +20,173 @@
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA. */
+#include <Foundation/Foundation.h>
+#include <AppKit/AppKit.h>
+#include "CalcBrain.h"
+#include "CalcFace.h"
+#include <math.h>
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import "CalcBrain.h"
-#import "CalcFace.h"
-#import <math.h>
-
-@implementation CalcBrain
-
-#pragma mark - Life cycle
-
-- (id)init
+@implementation CalcBrain: NSObject
+-(id) init
 {
-    [super init];
-    DLog();
-    result = 0;
-    enteredNumber = 0;
-    operation = none;
-    fractionalDigits = 0;
-    decimalSeparator = NO;
-    editing = YES;
-    face = nil;
-    DLog();
-    return self;
+  [super init];
+  result = 0;
+  enteredNumber = 0;
+  operation = none;
+  fractionalDigits = 0;
+  decimalSeparator = NO;
+  editing = YES;
+  face = nil;
+  return self;
 }
-
-- (void)dealloc
+-(void) dealloc
 {
-    DLog();
-    //if (face) {
+  if (face) 
     [face release];
-    //}
-    [super dealloc];
+  [super dealloc];
 }
-
 // Set the corresponding face
-- (void)setFace:(CalcFace *)aFace
+-(void) setFace: (CalcFace *)aFace
 {
-    DLog();
-    face = [aFace retain];
-    [face setDisplayedNumber: enteredNumber withSeparator: decimalSeparator
-            fractionalDigits: fractionalDigits];
+  face = [aFace retain];
+  [face setDisplayedNumber: enteredNumber withSeparator: decimalSeparator
+	fractionalDigits: fractionalDigits];
 }
-
 // The various buttons 
-- (void)clear:(id)sender
+-(void) clear: (id)sender
 {
-    DLog();
-    result = 0;
-    enteredNumber = 0;
-    operation = none;
-    fractionalDigits = 0;
-    decimalSeparator = NO;
-    editing = YES;
-    [face setDisplayedNumber: 0 withSeparator: NO fractionalDigits: 0];
+  result = 0;
+  enteredNumber = 0;
+  operation = none;
+  fractionalDigits = 0;
+  decimalSeparator = NO;
+  editing = YES;
+  [face setDisplayedNumber: 0 withSeparator: NO fractionalDigits: 0];
 }
-
-- (void)equal:(id)sender
+-(void) equal: (id)sender
 {
-    DLog();
-    switch (operation) {
-        case none:
-            result = enteredNumber;
-            enteredNumber = 0;
-            decimalSeparator = NO;
-            fractionalDigits = 0;
-            return;
-            break;
-        case addition:
-            result = result + enteredNumber;
-            break;
-        case subtraction:
-            result = result - enteredNumber;
-            break;
-        case multiplication:
-            result = result * enteredNumber;
-            break;
-        case division:
-            if (enteredNumber == 0)
-            {
-                [self error];
-                return;
-            }
-            else
-                result = result / enteredNumber;
-            break;
+  switch (operation)
+    {
+    case none: 
+      result = enteredNumber;
+      enteredNumber = 0;
+      decimalSeparator = NO;
+      fractionalDigits = 0;
+      return;
+      break;
+    case addition:
+      result = result + enteredNumber;
+      break;
+    case subtraction:
+      result = result - enteredNumber;
+      break;
+    case multiplication:
+      result = result * enteredNumber;
+      break;
+    case division:
+      if (enteredNumber == 0)
+	{
+	  [self error];
+	  return;
+	}
+      else 
+	result = result / enteredNumber;
+      break;
     }
-    [face setDisplayedNumber: result 
-               withSeparator: (ceil(result) != result)      
-            fractionalDigits: 7];
-    enteredNumber = result;
-    operation = none;
-    editing = NO;
+  [face setDisplayedNumber: result 
+	withSeparator: (ceil(result) != result)      
+	fractionalDigits: 7];
+  enteredNumber = result;
+  operation = none;
+  editing = NO;
 }
-
-- (void)digit:(id)sender
+-(void) digit: (id)sender
 {
-    DLog();
-    if (!editing) {
-        enteredNumber = 0;
-        decimalSeparator = NO;
-        fractionalDigits = 0;
-        editing = YES;
+  if (!editing)
+    {
+      enteredNumber = 0;
+      decimalSeparator = NO;
+      fractionalDigits = 0;
+      editing = YES;
     }
-    if (decimalSeparator) {
-        enteredNumber = enteredNumber
-        + ([sender tag] * pow (0.1, 1+fractionalDigits));
-        fractionalDigits++;
-    } else {
-        enteredNumber = enteredNumber * 10 + ([sender tag]);
-        // Check overflow
-        if (enteredNumber > pow (10, 15)) {
-            [self error];
-            return;
-        }
+  if (decimalSeparator)
+    {
+      enteredNumber = enteredNumber 
+	+ ([sender tag] * pow (0.1, 1+fractionalDigits));
+      fractionalDigits++;
     }
-    [face setDisplayedNumber: enteredNumber withSeparator: decimalSeparator
-            fractionalDigits: fractionalDigits];
+  else
+    {
+      enteredNumber = enteredNumber * 10 + ([sender tag]);
+      // Check overflow
+      if (enteredNumber > pow (10, 15))
+	{
+	  [self error];
+	  return;
+	}
+    }
+  [face setDisplayedNumber: enteredNumber withSeparator: decimalSeparator
+	fractionalDigits: fractionalDigits];
 }
-
-- (void)decimalSeparator:(id)sender
+-(void) decimalSeparator: (id)sender
 {
-    DLog();
-    if (!editing) {
-        enteredNumber = 0;
-        decimalSeparator = NO;
-        fractionalDigits = 0;
-        editing = YES;
+  if (!editing)
+    {
+      enteredNumber = 0;
+      decimalSeparator = NO;
+      fractionalDigits = 0;
+      editing = YES;
     }
-    if (!decimalSeparator) {
-        decimalSeparator = YES;
-        [face setDisplayedNumber: enteredNumber withSeparator: YES
-                fractionalDigits: 0];
-    }
-}
-
-- (void)operation:(id)sender
-{
-    DLog();
-    if (operation == none) {
-        result = enteredNumber;
-        enteredNumber = 0;
-        decimalSeparator = NO;
-        fractionalDigits = 0;
-        operation = [sender tag];
-    } else { // operation
-        [self equal: nil];
-        [self operation: sender];
+  if (!decimalSeparator)
+    {
+      decimalSeparator = YES;
+      [face setDisplayedNumber: enteredNumber withSeparator: YES
+	    fractionalDigits: 0];
     }
 }
-
-- (void)squareRoot:(id)sender
+-(void) operation: (id)sender
 {
-    DLog();
-    if (operation == none) {
-        result = sqrt (enteredNumber);
-        [face setDisplayedNumber: result
-                   withSeparator: (ceil(result) != result)
-                fractionalDigits: 7];
-        enteredNumber = result;
-        editing = NO;
-        operation = none;
-    } else { // operation
-        [self equal: nil];
-        [self squareRoot: sender];
+  if (operation == none)
+    {
+      result = enteredNumber;
+      enteredNumber = 0;
+      decimalSeparator = NO;
+      fractionalDigits = 0;
+      operation = [sender tag];
+    }
+  else // operation
+    {	 
+      [self equal: nil];
+      [self operation: sender];
     }
 }
-
-- (void)error
+-(void) squareRoot: (id)sender
 {
-    DLog();
-    result = 0;
-    enteredNumber = 0;
-    operation = none;
-    fractionalDigits = 0;
-    decimalSeparator = NO;
-    editing = YES;
-    [face setError];
+  if (operation == none)
+    {
+      result = sqrt (enteredNumber);
+      [face setDisplayedNumber: result 
+	    withSeparator: (ceil(result) != result)
+	    fractionalDigits: 7];
+      enteredNumber = result;
+      editing = NO;
+      operation = none;  
+    }
+  else // operation
+    {	 
+      [self equal: nil];
+      [self squareRoot: sender];
+    }
+} 
+-(void) error
+{
+  result = 0;
+  enteredNumber = 0;
+  operation = none;
+  fractionalDigits = 0;
+  decimalSeparator = NO;
+  editing = YES;
+  [face setError];
 }
-
 @end
 

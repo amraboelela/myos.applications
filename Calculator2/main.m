@@ -1,5 +1,5 @@
 /*
- Copyright © 2015 myOS Group.
+ Copyright © 2014 myOS Group.
  
  This application is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -17,10 +17,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *_window;
+#pragma mark - Static functions
+
+int main(int argc, char *argv[])
+{
+    return UIApplicationMain(argc, argv, nil, @"AppDelegate");
 }
-
-@property (nonatomic, retain) UIWindow *window;
-
-@end
