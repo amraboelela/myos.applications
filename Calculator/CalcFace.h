@@ -1,10 +1,12 @@
 /* CalcFace.h: Frontend of Calculator.app
 
-   Copyright (C) 1999 Free Software Foundation, Inc.
+   Copyright (C) 1999 - 2015 Free Software Foundation, Inc.
 
    Author:  Nicola Pero <n.pero@mi.flashnet.it>
    Date: 1999
-   
+   Modified by: Amr Aboelela <amraboelela@gmail.com>
+   Date: Jun 2015
+ 
    This file is part of GNUstep.
    
    This program is free software; you can redistribute it and/or modify
@@ -20,24 +22,29 @@
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA. */
-#include "CalcTypes.h"
+
+#import "CalcTypes.h"
 
 @class CalcBrain;
 
-@interface CalcFace: NSWindow
-{  
-  NSButton *buttons[18];
-  NSTextField *display;
+@interface CalcFace: UIView {
+    UIButton *buttons[18];
+    UILabel *display;
+    //CalcBrain *calcBrain;
 }
+
+//@property (retain) CalcBrain *calcBrain;
+
 // Set the corresponding brain
--(void) setBrain: (CalcBrain *)aBrain;
+- (void)setBrain:(CalcBrain *)aBrain;
 // Display a number
--(void) setDisplayedNumber: (double)aNumber 
-             withSeparator: (BOOL)displayDecimalSeparator
-          fractionalDigits: (int)fractionalDigits;
+- (void)setDisplayedNumber:(double)aNumber
+             withSeparator:(BOOL)displayDecimalSeparator
+          fractionalDigits:(int)fractionalDigits;
 // Tell the user a calculation error occurred
--(void) setError;
+- (void)setError;
 // Display the window after launching the app
-- (void)applicationDidFinishLaunching: (NSNotification *)aNotification;
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
+
 @end
 

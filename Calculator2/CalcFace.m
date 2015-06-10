@@ -60,7 +60,7 @@
     display = [[UILabel alloc] initWithFrame:CGRectMake(40, 54, 182, 24)];
     display.text = @"Welcome Calculator";
     display.textAlignment = UITextAlignmentRight;
-    [self addSubview: display];
+    [self addSubview:display];
     [display release];
     
     
@@ -88,13 +88,13 @@
     
     buttons[i] = [[UIButton alloc] initWithFrame:CGRectMake(114, 3, 34, 24)];
     [buttons[i] setTitle: @"1" forState:UIControlStateNormal];
-    [buttons[i] setTag: i];
+    [buttons[i] setTag:i];
     [buttons[i] addTarget:calcBrain action:@selector(digit:) forControlEvents:UIControlEventTouchUpInside];
     i++;
     
     buttons[i] = [[UIButton alloc] initWithFrame:CGRectMake(151, 3, 34, 24)];
     [buttons[i] setTitle: @"2" forState:UIControlStateNormal];
-    [buttons[i] setTag: i];
+    [buttons[i] setTag:i];
     [buttons[i] addTarget:calcBrain action:@selector(digit:) forControlEvents:UIControlEventTouchUpInside];
     i++;
     //DLog();

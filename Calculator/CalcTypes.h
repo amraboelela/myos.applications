@@ -25,11 +25,11 @@
 #define CALC_TYPES
 
 typedef enum {
-  none, 
-  addition, 
-  subtraction,
-  multiplication,
-  division
+    none,
+    addition,
+    subtraction,
+    multiplication,
+    division
 } calcOperation;
 
 #endif /* CALC_TYPES */

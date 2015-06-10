@@ -1,10 +1,12 @@
 /* CalcBrain.h: Brain of Calculator.app
 
-   Copyright (C) 1999 Free Software Foundation, Inc.
+   Copyright (C) 1999 - 2015 Free Software Foundation, Inc.
 
    Author:  Nicola Pero <n.pero@mi.flashnet.it>
    Date: 1999
-   
+   Modified by: Amr Aboelela <amraboelela@gmail.com>
+   Date: Jun 2015
+ 
    This file is part of GNUstep.
    
    This program is free software; you can redistribute it and/or modify
@@ -20,11 +22,11 @@
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA. */
+
 #include "CalcTypes.h"
 @class CalcFace;
 
-@interface CalcBrain: NSObject
-{
+@interface CalcBrain: NSObject {
   CalcFace *face;
   double result;
   double enteredNumber;

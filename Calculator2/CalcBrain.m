@@ -4,7 +4,9 @@
 
    Author:  Nicola Pero <n.pero@mi.flashnet.it>
    Date: 1999
-   
+   Modified by: Amr Aboelela <amraboelela@gmail.com>
+   Date: Jun 2015
+ 
    This file is part of GNUstep.
    
    This program is free software; you can redistribute it and/or modify
