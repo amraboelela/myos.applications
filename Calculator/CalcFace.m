@@ -45,12 +45,13 @@
     int i;
     
     // Display
-    display = [[UILabel alloc] initWithFrame: NSMakeRect (40, 84, 182, 24)];
-    [display setEditable: NO];
+    display = [[UILabel alloc] initWithFrame:CGRectMake(40, 84, 182, 24)];
+    //[display setEditable: NO];
     // [display setScrollable: YES];
-    [display setBezeled: YES];
-    [display setDrawsBackground: YES];
-    [display setAlignment: NSRightTextAlignment];
+    //[display setBezeled: YES];
+    //[display setDrawsBackground: YES];
+    display.textAlignment = UITextAlignmentRight;
+    //[display setAlignment: NSRightTextAlignment];
     
     for (i=0; i < 18; i++) {
         buttons[i] = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -257,7 +258,6 @@
 - (void)setBrain:(CalcBrain *)aBrain
 {
     int i;
-    
     for (i = 0; i < 10; i++) {
         //[buttons[i] setTarget: aBrain];
         [buttons[i] addTarget:aBrain action:@selector(digit:) forControlEvents:UIControlEventTouchUpInside];
@@ -272,32 +272,27 @@
     [buttons[17] addTarget:aBrain action:@selector(equal:) forControlEvents:UIControlEventTouchUpInside];
 }
 
--(void) setDisplayedNumber: (double)aNumber
-	     withSeparator: (BOOL)displayDecimalSeparator
-	  fractionalDigits: (int)fractionalDigits
+- (void)setDisplayedNumber:(double)aNumber withSeparator:(BOOL)displayDecimalSeparator fractionalDigits:(int)fractionalDigits
 {
-  
-  if (displayDecimalSeparator)
-    {
-      [display setStringValue: 
-		 [NSString stringWithFormat: 
-			     [NSString stringWithFormat: 
-					 @"%%#.%df", fractionalDigits], 
-			   aNumber]];
+    
+    if (displayDecimalSeparator) {
+        [display setStringValue:[NSString stringWithFormat:[NSString stringWithFormat:@"%%#.%df", fractionalDigits], aNumber]];
+    } else { // !displayDecimalSeparator
+        [display setStringValue: [NSString stringWithFormat: @"%.0f", aNumber]];
     }
-  else // !displayDecimalSeparator
-    [display setStringValue: [NSString stringWithFormat: @"%.0f", aNumber]];
 }
 
 -(void) setError
 {
-  [display setStringValue: @"Error"];
+    [display setStringValue: @"Error"];
 }
 
+/*
 - (void)applicationDidFinishLaunching: (NSNotification *)aNotification
 {
   [self orderFront: self];
-}
+}*/
+
 @end
 
 
