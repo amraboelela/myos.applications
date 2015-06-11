@@ -57,7 +57,7 @@
     }
     for (i=0; i < 10; i++) {
         buttons[i].tag = i;
-        buttons[i].title = [NSString stringWithFormat:@"%d", i];
+        [buttons[i] setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
     }
     
     // Numbers
@@ -165,21 +165,21 @@
     
     //buttons[10] = [[UIButton alloc] initWithFrame: NSMakeRect (77, 30, 34, 24)];
     //[buttons[10] setButtonType: NSToggleButton];
-    [buttons[10] setTitle:@"."];
+    [buttons[10] setTitle:@"." forState:UIControlStateNormal];
     //[buttons[10] setState: NO];
     
     //[buttons[10] setKeyEquivalent: @"."];
     
     //buttons[11] = [[UIButton alloc] initWithFrame: NSMakeRect (77, 57, 34, 24)];
     //[buttons[11] setButtonType: NSToggleButton];
-    [buttons[11] setTitle: @"SQR"];
+    [buttons[11] setTitle: @"SQR" forState:UIControlStateNormal];;
     //[buttons[11] setState: NO];
     //[buttons[11] setAction: @selector(squareRoot:)];
     //[buttons[11] setKeyEquivalent: @"s"];
     
     //buttons[12] = [[UIButton alloc] initWithFrame: NSMakeRect (3, 30, 34, 24)];
     //[buttons[12] setButtonType: NSToggleButton];
-    [buttons[12] setTitle:@"+"];
+    [buttons[12] setTitle:@"+" forState:UIControlStateNormal];
     [buttons[12] setTag:addition];
     //[buttons[12] setState: NO];
     //[buttons[12] setAction: @selector(operation:)];
@@ -187,7 +187,7 @@
     
     //buttons[13] = [[UIButton alloc] initWithFrame: NSMakeRect (40, 30, 34, 24)];
     //[buttons[13] setButtonType: NSToggleButton];
-    [buttons[13] setTitle:@"-"];
+    [buttons[13] setTitle:@"-" forState:UIControlStateNormal];
     [buttons[13] setTag:subtraction];
     //[buttons[13] setState: NO];
     //[buttons[13] setAction: @selector(operation:)];
@@ -195,7 +195,7 @@
     
     //buttons[14] = [[UIButton alloc] initWithFrame: NSMakeRect (3, 57, 34, 24)];
     //[buttons[14] setButtonType: NSToggleButton];
-    [buttons[14] setTitle:@"*"];
+    [buttons[14] setTitle:@"*" forState:UIControlStateNormal];
     [buttons[14] setTag:multiplication];
     //[buttons[14] setState: NO];
     //[buttons[14] setAction: @selector(operation:)];
@@ -203,7 +203,7 @@
     
     //buttons[15] = [[UIButton alloc] initWithFrame: NSMakeRect (40, 57, 34, 24)];
     //[buttons[15] setButtonType: NSToggleButton];
-    [buttons[15] setTitle:@"/"];
+    [buttons[15] setTitle:@"/" forState:UIControlStateNormal];
     [buttons[15] setTag:division];
     //[buttons[15] setState: NO];
     //[buttons[15] setAction: @selector(operation:)];
@@ -211,7 +211,7 @@
     
     //buttons[16] = [[UIButton alloc] initWithFrame: NSMakeRect (3, 84, 34, 24)];
     //[buttons[16] setButtonType: NSToggleButton];
-    [buttons[16] setTitle:@"CL"];
+    [buttons[16] setTitle:@"CL" forState:UIControlStateNormal];
     //[buttons[16] setState: NO];
     //[buttons[16] setAction: @selector(clear:)];
     //[buttons[16] setKeyEquivalent: @"C"];
@@ -219,7 +219,7 @@
     //buttons[17] = [[UIButton alloc] initWithFrame: NSMakeRect (3, 3, 71, 24)];
     //[UIButton buttonWithType:UIButtonTypeCustom]
     //[buttons[17] setButtonType: NSToggleButton];
-    [buttons[17] setTitle:@"="];
+    [buttons[17] setTitle:@"=" forState:UIControlStateNormal];
     //[buttons[17] setState:NO];
     //[buttons[17] setAction: @selector(equal:)];
     //[buttons[17] setKeyEquivalent: @"="];
