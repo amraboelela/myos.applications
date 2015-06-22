@@ -28,15 +28,15 @@
 {
     //DLog(@"mainScreen: %@", [UIScreen mainScreen]);
     _window = [[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
-    _window.backgroundColor = [UIColor yellowColor];
-    _window.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    //_window.backgroundColor = [UIColor yellowColor];
+    //_window.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     CalcFace *calcFace = [[CalcFace alloc] initWithFrame:_window.bounds];
-    calcFace.backgroundColor = [UIColor grayColor];
+    calcFace.backgroundColor = [UIColor brownColor];
     [_window addSubview:calcFace];
     [calcFace release];
     [_window makeKeyAndVisible];
-    DLog();
+    //DLog();
 }
 
 - (void)dealloc

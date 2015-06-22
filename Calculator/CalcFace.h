@@ -44,7 +44,7 @@
 // Tell the user a calculation error occurred
 - (void)setError;
 // Display the window after launching the app
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
+//- (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
 
 @end
 
