@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>7AD6F708-50E4-4797-99ED-6C891D548FBA</string>
 	<key>IDESourceControlProjectName</key>
-	<string>applications</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1C5B80775227EA4699751539B08D5265CAB86733</key>
 		<string>github.com:amraboelela/myos.applications</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>applications.xcodeproj</string>
+	<string>applications.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1C5B80775227EA4699751539B08D5265CAB86733</key>

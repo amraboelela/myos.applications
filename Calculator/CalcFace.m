@@ -26,6 +26,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "CalcFace.h"
+#import "DivideView.h"
 
 #define kButtonMargin   2
 
@@ -46,7 +47,7 @@
     float calcHeight = (kButtonMargin + _buttonSize) * 7 - kButtonMargin;
     _initialX = (frame.size.width - calcWidth) / 2;
     _initialY = (frame.size.height - calcHeight) / 2;
-    _display = [[UILabel alloc] initWithFrame:CGRectMake(_initialX + (kButtonMargin + _buttonSize), _initialY, kButtonMargin * 2 + _buttonSize * 3, _buttonSize)];
+    _display = [[[UILabel alloc] initWithFrame:CGRectMake(_initialX + (kButtonMargin + _buttonSize), _initialY, kButtonMargin * 2 + _buttonSize * 3, _buttonSize)] autorelease];
     //_display.text = @"gpqPQGaA[]{}";
     //[_display sizeToFit];
     _display.textColor = [UIColor whiteColor];
@@ -116,8 +117,19 @@
         [_buttons[i-initialI] setTitle:divStr forState:UIControlStateNormal];
     }*/
     //return self;
-    [_buttons[22] setTitle:@"/" forState:UIControlStateNormal];
+    [_buttons[22] setTitle:@"" forState:UIControlStateNormal];
     [_buttons[22] setTag:division];
+    
+    DivideView *divideView = [[[UIView alloc] init] autorelease];
+    float viewWidth = 30;
+    float viewHeight = 20;
+    CGRect frame = _buttons[22].frame;
+    frame.origin.x += (frame.size.width - viewWidth) / 2.0;
+    frame.origin.y += (frame.size.height - viewHeight) / 2.0;
+    frame.size.width = viewWidth;
+    frame.size.height = viewHeight;
+    divideView.frame = frame;
+    
     [self setupButton:_buttons[22] atX:0 andY:3];
     [_buttons[23] setTitle:@"CL" forState:UIControlStateNormal];
     [self setupButton:_buttons[23] atX:0 andY:0];
@@ -130,7 +142,8 @@
     }
     //DLog();
     [self addSubview:_display];
-    [_display release];
+    [self addSubview:divideView];
+    //[_display release];
     
     return self;
 }
