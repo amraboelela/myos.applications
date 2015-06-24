@@ -27,16 +27,7 @@
 #import <UIKit/UIKit.h>
 #import "CalcFace.h"
 
-//#define buttonSize    45
-//#define buttonSize   45
-#define kButtonMargin   3
-//#define initialX       50
-//#define initialY       100
-
-//
-// Thanks to Andrew Lindesay for drawing the app icon,
-// and for suggestions on the window layout.
-//
+#define kButtonMargin   2
 
 @implementation CalcFace
 
@@ -49,69 +40,98 @@
         return nil;
     }
     int i;
-    float initialX;
-    float buttonSize;
-    float initialY;
-    buttonSize = (frame.size.width - kButtonMargin) / 6.0 - kButtonMargin;
-    //DLog(@"buttonSize: %.2f", buttonSize);
-    float calcWidth = (kButtonMargin + buttonSize) * 6 - kButtonMargin;
-    float calcHeight = (kButtonMargin + buttonSize) * 4 - kButtonMargin;
-    initialX = (frame.size.width - calcWidth) / 2;
-    initialY = (frame.size.height - calcHeight) / 2;
-    display = [[UILabel alloc] initWithFrame:CGRectMake(initialX + (kButtonMargin + buttonSize) * 1, initialY + (kButtonMargin + buttonSize) * 3, (kButtonMargin + buttonSize) * 4 + buttonSize, buttonSize)];
-    display.textAlignment = UITextAlignmentRight;
-    display.backgroundColor = [UIColor blackColor];
-    for (i=0; i < 18; i++) {
-        buttons[i] = [UIButton buttonWithType:UIButtonTypeCustom];
-        buttons[i].backgroundColor = [UIColor lightGrayColor];
+    _buttonSize = (frame.size.width - kButtonMargin) / 4.0 - kButtonMargin;
+    //DLog(@"_buttonSize: %.2f", _buttonSize);
+    float calcWidth = (kButtonMargin + _buttonSize) * 4 - kButtonMargin;
+    float calcHeight = (kButtonMargin + _buttonSize) * 7 - kButtonMargin;
+    _initialX = (frame.size.width - calcWidth) / 2;
+    _initialY = (frame.size.height - calcHeight) / 2;
+    _display = [[UILabel alloc] initWithFrame:CGRectMake(_initialX + (kButtonMargin + _buttonSize), _initialY, kButtonMargin * 2 + _buttonSize * 3, _buttonSize)];
+    //_display.text = @"gpqPQGaA[]{}";
+    //[_display sizeToFit];
+    _display.textColor = [UIColor whiteColor];
+    _display.backgroundColor = [UIColor blackColor];
+    //[self addSubview:_display];
+    //[_display release];
+    //return self; 
+
+   _display.textAlignment = UITextAlignmentRight;
+    _display.backgroundColor = [UIColor blackColor];
+    for (i=0; i < 25; i++) {
+        _buttons[i] = [UIButton buttonWithType:UIButtonTypeCustom];
+        _buttons[i].titleLabel.font = [UIFont systemFontOfSize:28];
+    }
+    for (i=0; i < 11; i++) {
+        _buttons[i].backgroundColor = [UIColor lightGrayColor];
+    }
+    for (i=11; i < 25; i++) {
+        _buttons[i].backgroundColor = [UIColor grayColor];
     }
     for (i=0; i < 10; i++) {
-        buttons[i].tag = i;
-        [buttons[i] setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
+        _buttons[i].tag = i;
+        [_buttons[i] setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
     }
-  
- 
-    buttons[0].frame = CGRectMake(initialX + (kButtonMargin + buttonSize) * 2, initialY, buttonSize, buttonSize);
-    /*for (i=0; i < 10; i++) {
-        buttons[i].frame = CGRectMake(initialX + (kButtonMargin + buttonSize) * (i + 2), initialY, buttonSize, buttonSize);
-    }*/
-    //[buttons[0] setTitle:@"/" forState:UIControlStateNormal];
-    //DLog(@"buttons[0]: %@", buttons[0]);
-
-    //DLog();    
+    [self setupButton:_buttons[0] atX:1 andY:6];
     for (i=0; i < 3; i++) {
-        buttons[i+1].frame = CGRectMake(initialX + (kButtonMargin + buttonSize) * (i + 3), initialY, buttonSize, buttonSize);
-        buttons[i+4].frame = CGRectMake(initialX + (kButtonMargin + buttonSize) * (i + 3), initialY + kButtonMargin + buttonSize, buttonSize, buttonSize);
-        buttons[i+7].frame = CGRectMake(initialX + (kButtonMargin + buttonSize) * (i + 3), initialY + (kButtonMargin + buttonSize) * 2, buttonSize, buttonSize);
+        [self setupButton:_buttons[i+1] atX:i+1 andY:5];
+        [self setupButton:_buttons[i+4] atX:i+1 andY:4];
+        [self setupButton:_buttons[i+7] atX:i+1 andY:3];
     }
 
-    [buttons[10] setTitle:@"." forState:UIControlStateNormal];
-    [buttons[11] setTitle:@"SQR" forState:UIControlStateNormal];
-    [buttons[12] setTitle:@"+" forState:UIControlStateNormal];
-    [buttons[12] setTag:addition];
-    [buttons[13] setTitle:@"-" forState:UIControlStateNormal];
-    [buttons[13] setTag:subtraction];
-    [buttons[14] setTitle:@"*" forState:UIControlStateNormal];
-    [buttons[14] setTag:multiplication];
-    [buttons[15] setTitle:@"/" forState:UIControlStateNormal];
-    [buttons[15] setTag:division];
-     for (i=0; i < 2; i++) {
-        buttons[i+10].frame = CGRectMake(initialX, initialY + (kButtonMargin + buttonSize) * (i + 1), buttonSize, buttonSize);
-        buttons[i+12].frame = CGRectMake(initialX + (kButtonMargin + buttonSize) * (i + 1), initialY + kButtonMargin + buttonSize, buttonSize, buttonSize);
-        buttons[i+14].frame = CGRectMake(initialX + (kButtonMargin + buttonSize) * (i + 1), initialY + (kButtonMargin + buttonSize) * 2, buttonSize, buttonSize);
-    }
-    [buttons[16] setTitle:@"CL" forState:UIControlStateNormal];
-    buttons[16].frame = CGRectMake(initialX, initialY + (kButtonMargin + buttonSize) * 3, buttonSize, buttonSize);
-    [buttons[17] setTitle:@"=" forState:UIControlStateNormal];
-    buttons[17].frame = CGRectMake(initialX, initialY, kButtonMargin + buttonSize * 2, buttonSize);
+    [_buttons[10] setTitle:@"." forState:UIControlStateNormal];
+    [self setupButton:_buttons[10] atX:2 andY:6];
+    //_buttons[10].frame = CGRectMake(_initialX + (kButtonMargin + _buttonSize) * 2, _initialY + (kButtonMargin + _buttonSize) * 4, _buttonSize, _buttonSize);
+    [_buttons[11] setTitle:@"SQR" forState:UIControlStateNormal];
+    [self setupButton:_buttons[11] atX:0 andY:1];
+    [_buttons[12] setTitle:@"sin" forState:UIControlStateNormal];
+    [self setupButton:_buttons[12] atX:1 andY:1];
+    [_buttons[13] setTitle:@"cos" forState:UIControlStateNormal];
+    [self setupButton:_buttons[13] atX:2 andY:1];
+    [_buttons[14] setTitle:@"tan" forState:UIControlStateNormal];
+    [self setupButton:_buttons[14] atX:3 andY:1];
+    [_buttons[15] setTitle:@"^" forState:UIControlStateNormal];
+    [self setupButton:_buttons[15] atX:0 andY:2];
+    [_buttons[16] setTitle:@"e" forState:UIControlStateNormal];
+    [self setupButton:_buttons[16] atX:1 andY:2];
+    [_buttons[17] setTitle:@"ln" forState:UIControlStateNormal];
+    [self setupButton:_buttons[17] atX:2 andY:2];
+    [_buttons[18] setTitle:@"log" forState:UIControlStateNormal];
+    [self setupButton:_buttons[18] atX:3 andY:2];
+    [_buttons[19] setTitle:@"+" forState:UIControlStateNormal];
+    [_buttons[19] setTag:addition];
+    [self setupButton:_buttons[19] atX:0 andY:6];
+    [_buttons[20] setTitle:@"-" forState:UIControlStateNormal];
+    [_buttons[20] setTag:subtraction];
+    [self setupButton:_buttons[20] atX:0 andY:5];
+    [_buttons[21] setTitle:@"x" forState:UIControlStateNormal];
+    [_buttons[21] setTag:multiplication];
+    [self setupButton:_buttons[21] atX:0 andY:4];
+
+    /*NSString *divStr = [NSString stringWithFormat:@"%c", 200];//247];
+    //DLog(@"divStr: %@", divStr);
+    int initialI = 33+25*5;
+    for (int i=initialI; i<initialI+25; i++) {
+        DLog(@"char %d: %c", i, i);
+        NSString *divStr = [NSString stringWithFormat:@"%d%c", i,i];
+        [_buttons[i-initialI] setTitle:divStr forState:UIControlStateNormal];
+    }*/
+    //return self;
+    [_buttons[22] setTitle:@"/" forState:UIControlStateNormal];
+    [_buttons[22] setTag:division];
+    [self setupButton:_buttons[22] atX:0 andY:3];
+    [_buttons[23] setTitle:@"CL" forState:UIControlStateNormal];
+    [self setupButton:_buttons[23] atX:0 andY:0];
+    [_buttons[24] setTitle:@"=" forState:UIControlStateNormal];
+    [self setupButton:_buttons[24] atX:3 andY:6];
     
-    for (i = 0; i < 18; i++) {
-        [self addSubview:buttons[i]];
+    for (i = 0; i < 25; i++) {
+        [self addSubview:_buttons[i]];
+        //DLog(@"_buttons[%d]: %@", i, _buttons[i]);
     }
-    [self addSubview:display];
-    [display release];
+    //DLog();
+    [self addSubview:_display];
+    [_display release];
     
-    //DLog();    
     return self;
 }
 
@@ -126,32 +146,32 @@
 {
     DLog(@"aBrain: %@", aBrain);
     for (int i = 0; i < 10; i++) {
-        [buttons[i] addTarget:aBrain action:@selector(digit:) forControlEvents:UIControlEventTouchUpInside];
+        [_buttons[i] addTarget:aBrain action:@selector(digit:) forControlEvents:UIControlEventTouchUpInside];
     }
-    [buttons[10] addTarget:aBrain action:@selector(decimalSeparator:) forControlEvents:UIControlEventTouchUpInside];
-    [buttons[11] addTarget:aBrain action:@selector(squareRoot:) forControlEvents:UIControlEventTouchUpInside];
-/*    [buttons[12] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
-    [buttons[13] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
-    [buttons[14] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
-    [buttons[15] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
-    [buttons[16] addTarget:aBrain action:@selector(clear:) forControlEvents:UIControlEventTouchUpInside];
-    [buttons[17] addTarget:aBrain action:@selector(equal:) forControlEvents:UIControlEventTouchUpInside];
+    [_buttons[10] addTarget:aBrain action:@selector(decimalSeparator:) forControlEvents:UIControlEventTouchUpInside];
+    [_buttons[11] addTarget:aBrain action:@selector(squareRoot:) forControlEvents:UIControlEventTouchUpInside];
+/*    [_buttons[12] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
+    [_buttons[13] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
+    [_buttons[14] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
+    [_buttons[15] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
+    [_buttons[16] addTarget:aBrain action:@selector(clear:) forControlEvents:UIControlEventTouchUpInside];
+    [_buttons[17] addTarget:aBrain action:@selector(equal:) forControlEvents:UIControlEventTouchUpInside];
 */
 }
 
-- (void)setDisplayedNumber:(double)aNumber withSeparator:(BOOL)displayDecimalSeparator fractionalDigits:(int)fractionalDigits
+- (void)setDisplayedNumber:(double)aNumber withSeparator:(BOOL)_displayDecimalSeparator fractionalDigits:(int)fractionalDigits
 {
-    if (displayDecimalSeparator) {
-        display.text = [NSString stringWithFormat:[NSString stringWithFormat:@"%%#.%df", fractionalDigits], aNumber];
-    } else { // !displayDecimalSeparator
-        display.text = [NSString stringWithFormat: @"%.0f", aNumber];
+    if (_displayDecimalSeparator) {
+        _display.text = [NSString stringWithFormat:[NSString stringWithFormat:@"%%#.%df", fractionalDigits], aNumber];
+    } else { // !_displayDecimalSeparator
+        _display.text = [NSString stringWithFormat: @"%.0f", aNumber];
     }
 }
 
 - (void)setError
 {
-    display.text = @"Error";
-    //[display setStringValue: @"Error"];
+    _display.text = @"Error";
+    //[_display setStringValue: @"Error"];
 }
 
 /*
@@ -159,6 +179,13 @@
 {
   [self orderFront: self];
 }*/
+
+#pragma mark - Private methods
+
+- (void)setupButton:(UIButton *)button atX:(int)x andY:(int)y
+{
+    button.frame = CGRectMake(_initialX + (kButtonMargin + _buttonSize) * x, _initialY + (kButtonMargin + _buttonSize) * y, _buttonSize, _buttonSize);
+}
 
 @end
 

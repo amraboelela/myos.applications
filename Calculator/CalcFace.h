@@ -28,9 +28,12 @@
 @class CalcBrain;
 
 @interface CalcFace: UIView {
-    UIButton *buttons[18];
-    UILabel *display;
+    UIButton *_buttons[25];
+    UILabel *_display;
     //CalcBrain *calcBrain;
+    float _initialX;
+    float _initialY;
+    float _buttonSize;
 }
 
 //@property (retain) CalcBrain *calcBrain;
