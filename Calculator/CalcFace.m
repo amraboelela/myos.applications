@@ -90,8 +90,22 @@
     [self setupButton:_buttons[13] atX:2 andY:1];
     [_buttons[14] setTitle:@"tan" forState:UIControlStateNormal];
     [self setupButton:_buttons[14] atX:3 andY:1];
-    [_buttons[15] setTitle:@"^" forState:UIControlStateNormal];
+    [_buttons[15] setTitle:@"x " forState:UIControlStateNormal];
     [self setupButton:_buttons[15] atX:0 andY:2];
+    _buttons[15].titleLabel.font = [UIFont systemFontOfSize:22];
+    UILabel *yLabel = [[[UILabel alloc] init] autorelease];
+    yLabel.font = [UIFont systemFontOfSize:12];
+    yLabel.textColor = [UIColor whiteColor];
+    yLabel.text = @"y";
+    [yLabel sizeToFit];
+    CGSize xSize = [@"x" sizeWithFont:_buttons[15].titleLabel.font];
+    CGSize viewSize = yLabel.frame.size;
+    CGRect aFrame = _buttons[15].frame;
+    aFrame.origin.x += (aFrame.size.width - xSize.width - viewSize.width) / 2.0 + xSize.width;
+    aFrame.origin.y += (aFrame.size.height - xSize.height) / 2.0;
+    aFrame.size = viewSize;
+    yLabel.frame = aFrame;
+
     [_buttons[16] setTitle:@"e" forState:UIControlStateNormal];
     [self setupButton:_buttons[16] atX:1 andY:2];
     [_buttons[17] setTitle:@"ln" forState:UIControlStateNormal];
@@ -107,30 +121,22 @@
     [_buttons[21] setTitle:@"x" forState:UIControlStateNormal];
     [_buttons[21] setTag:multiplication];
     [self setupButton:_buttons[21] atX:0 andY:4];
-
-    /*NSString *divStr = [NSString stringWithFormat:@"%c", 200];//247];
-    //DLog(@"divStr: %@", divStr);
-    int initialI = 33+25*5;
-    for (int i=initialI; i<initialI+25; i++) {
-        DLog(@"char %d: %c", i, i);
-        NSString *divStr = [NSString stringWithFormat:@"%d%c", i,i];
-        [_buttons[i-initialI] setTitle:divStr forState:UIControlStateNormal];
-    }*/
-    //return self;
     [_buttons[22] setTitle:@"" forState:UIControlStateNormal];
     [_buttons[22] setTag:division];
-    
-    DivideView *divideView = [[[UIView alloc] init] autorelease];
-    float viewWidth = 30;
-    float viewHeight = 20;
-    CGRect frame = _buttons[22].frame;
-    frame.origin.x += (frame.size.width - viewWidth) / 2.0;
-    frame.origin.y += (frame.size.height - viewHeight) / 2.0;
-    frame.size.width = viewWidth;
-    frame.size.height = viewHeight;
-    divideView.frame = frame;
-    
     [self setupButton:_buttons[22] atX:0 andY:3];
+    
+    DivideView *divideView = [[[DivideView alloc] init] autorelease];
+    viewSize = CGSizeMake(40, 40);
+    //viewHeight = 40;
+    aFrame = _buttons[22].frame;
+    //DLog(@"aFrame: %@", NSStringFromCGRect(aFrame));
+    aFrame.origin.x += (aFrame.size.width - viewSize.width) / 2.0;
+    aFrame.origin.y += (aFrame.size.height - viewSize.height) / 2.0;
+    aFrame.size = viewSize;
+    //aFrame.size.height = viewSize.height;
+    //DLog(@"aFrame 2: %@", NSStringFromCGRect(aFrame));
+    divideView.frame = aFrame;
+    //DLog(); 
     [_buttons[23] setTitle:@"CL" forState:UIControlStateNormal];
     [self setupButton:_buttons[23] atX:0 andY:0];
     [_buttons[24] setTitle:@"=" forState:UIControlStateNormal];
@@ -142,6 +148,7 @@
     }
     //DLog();
     [self addSubview:_display];
+    [self addSubview:yLabel];
     [self addSubview:divideView];
     //[_display release];
     

@@ -27,5 +27,6 @@ OBJECTS = \
     AppDelegate.o \
     CalcBrain.o \
     CalcFace.o \
+    DivideView.o \
 
 include ${MYOS_PATH}/sdk/app-makefile
