@@ -48,7 +48,8 @@
     _initialX = (frame.size.width - calcWidth) / 2;
     _initialY = (frame.size.height - calcHeight) / 2;
     _display = [[[UILabel alloc] initWithFrame:CGRectMake(_initialX + (kButtonMargin + _buttonSize), _initialY, kButtonMargin * 2 + _buttonSize * 3, _buttonSize)] autorelease];
-    //_display.text = @"gpqPQGaA[]{}";
+    _display.text = @"0 ";
+    _display.font = [UIFont systemFontOfSize:28];
     //[_display sizeToFit];
     _display.textColor = [UIColor whiteColor];
     _display.backgroundColor = [UIColor blackColor];
@@ -56,7 +57,7 @@
     //[_display release];
     //return self; 
 
-   _display.textAlignment = UITextAlignmentRight;
+    _display.textAlignment = UITextAlignmentRight;
     _display.backgroundColor = [UIColor blackColor];
     for (i=0; i < 25; i++) {
         _buttons[i] = [UIButton buttonWithType:UIButtonTypeCustom];

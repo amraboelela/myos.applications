@@ -16,18 +16,28 @@
  */
 
 #import "DivideView.h"
-#import <QuartzCore/QuartzCore-private.h>
+#import <QuartzCore/QuartzCore.h>
+#import <UIKit/UIKit.h>
 
-#define kDotSize           3.0
-#define kDotInterSpace     15.0
+#define kDotSize           2.0
+#define kDotInterSpace     13.0
 #define kLineLength        15.0
-//#define kLineThickness     4.0
 
 #pragma mark - Static functions
 
 @implementation DivideView
 
 #pragma mark - Life cycle
+
+- (id)initWithFrame:(CGRect)frame
+{
+    if ((self = [super initWithFrame:frame])) {
+        DLog();
+        self.contentScaleFactor = [UIScreen mainScreen].scale;
+    }
+    //DLog(@"self: %@", self);
+    return self;
+}
 
 - (void)dealloc
 {
