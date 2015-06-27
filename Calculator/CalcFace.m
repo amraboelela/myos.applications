@@ -27,6 +27,7 @@
 #import <UIKit/UIKit.h>
 #import "CalcFace.h"
 #import "DivideView.h"
+#import "SqaureRootView.h"
 
 #define kButtonMargin   2
 
@@ -83,8 +84,20 @@
     [_buttons[10] setTitle:@"." forState:UIControlStateNormal];
     [self setupButton:_buttons[10] atX:2 andY:6];
     //_buttons[10].frame = CGRectMake(_initialX + (kButtonMargin + _buttonSize) * 2, _initialY + (kButtonMargin + _buttonSize) * 4, _buttonSize, _buttonSize);
-    [_buttons[11] setTitle:@"SQR" forState:UIControlStateNormal];
+    [_buttons[11] setTitle:@"" forState:UIControlStateNormal];
     [self setupButton:_buttons[11] atX:0 andY:1];
+    SqaureRootView *sqaureRootView = [[[SqaureRootView alloc] init] autorelease];
+    CGSize viewSize = CGSizeMake(50, 50);
+    //viewHeight = 40;
+    aFrame = _buttons[11].frame;
+    //DLog(@"aFrame: %@", NSStringFromCGRect(aFrame));
+    aFrame.origin.x += (aFrame.size.width - viewSize.width) / 2.0;
+    aFrame.origin.y += (aFrame.size.height - viewSize.height) / 2.0;
+    aFrame.size = viewSize;
+    //aFrame.size.height = viewSize.height;
+    //DLog(@"aFrame 2: %@", NSStringFromCGRect(aFrame));
+    sqaureRootView.frame = aFrame;
+    
     [_buttons[12] setTitle:@"sin" forState:UIControlStateNormal];
     [self setupButton:_buttons[12] atX:1 andY:1];
     [_buttons[13] setTitle:@"cos" forState:UIControlStateNormal];
@@ -100,7 +113,7 @@
     yLabel.text = @"y";
     [yLabel sizeToFit];
     CGSize xSize = [@"x" sizeWithFont:_buttons[15].titleLabel.font];
-    CGSize viewSize = yLabel.frame.size;
+    viewSize = yLabel.frame.size;
     CGRect aFrame = _buttons[15].frame;
     aFrame.origin.x += (aFrame.size.width - xSize.width - viewSize.width) / 2.0 + xSize.width;
     aFrame.origin.y += (aFrame.size.height - xSize.height) / 2.0;
@@ -149,6 +162,7 @@
     }
     //DLog();
     [self addSubview:_display];
+    [self addSubview:sqaureRootView];
     [self addSubview:yLabel];
     [self addSubview:divideView];
     //[_display release];
