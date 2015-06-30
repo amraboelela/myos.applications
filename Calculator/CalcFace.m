@@ -154,6 +154,7 @@
     [_buttons[23] setTitle:@"CL" forState:UIControlStateNormal];
     [self setupButton:_buttons[23] atX:0 andY:0];
     [_buttons[24] setTitle:@"=" forState:UIControlStateNormal];
+    _buttons[24].backgroundColor = [UIColor blueColor];
     [self setupButton:_buttons[24] atX:3 andY:6];
     
     for (i = 0; i < 25; i++) {
