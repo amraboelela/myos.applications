@@ -28,5 +28,6 @@ OBJECTS = \
     CalcBrain.o \
     CalcFace.o \
     DivideView.o \
+    SqaureRootView.o \
 
 include ${MYOS_PATH}/sdk/app-makefile

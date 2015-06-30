@@ -87,9 +87,9 @@
     [_buttons[11] setTitle:@"" forState:UIControlStateNormal];
     [self setupButton:_buttons[11] atX:0 andY:1];
     SqaureRootView *sqaureRootView = [[[SqaureRootView alloc] init] autorelease];
-    CGSize viewSize = CGSizeMake(50, 50);
+    CGSize viewSize = CGSizeMake(30, 25);
     //viewHeight = 40;
-    aFrame = _buttons[11].frame;
+    CGRect aFrame = _buttons[11].frame;
     //DLog(@"aFrame: %@", NSStringFromCGRect(aFrame));
     aFrame.origin.x += (aFrame.size.width - viewSize.width) / 2.0;
     aFrame.origin.y += (aFrame.size.height - viewSize.height) / 2.0;
@@ -114,7 +114,7 @@
     [yLabel sizeToFit];
     CGSize xSize = [@"x" sizeWithFont:_buttons[15].titleLabel.font];
     viewSize = yLabel.frame.size;
-    CGRect aFrame = _buttons[15].frame;
+    aFrame = _buttons[15].frame;
     aFrame.origin.x += (aFrame.size.width - xSize.width - viewSize.width) / 2.0 + xSize.width;
     aFrame.origin.y += (aFrame.size.height - xSize.height) / 2.0;
     aFrame.size = viewSize;

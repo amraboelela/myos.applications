@@ -19,8 +19,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
-//#define kDotSize           2.0
-//#define kDotInterSpace     13.0
 #define kLineLength        15.0
 
 #pragma mark - Static functions
@@ -32,7 +30,7 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if ((self = [super initWithFrame:frame])) {
-        DLog();
+        //DLog();
         self.contentScaleFactor = [UIScreen mainScreen].scale;
     }
     //DLog(@"self: %@", self);
@@ -48,24 +46,19 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    DLog(@"rect: %@", NSStringFromCGRect(rect));
+    //DLog(@"rect: %@", NSStringFromCGRect(rect));
     float width = rect.size.width;
     float height = rect.size.height;
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
     CGContextSetRGBStrokeColor(context, 255.0 / 255.0, 255.0 / 255.0, 255.0 / 255.0, 1.0);
     CGContextSetLineWidth(context, 2);
-    CGContextMoveToPoint(context, width / 2.0, height);
-    CGContextAddLineToPoint(context, width, 0);
+    CGContextMoveToPoint(context, width * 0.85, 0);
+    CGContextAddLineToPoint(context, width / 2.0, 0);
+    CGContextAddLineToPoint(context, width / 3.0, height);
+    CGContextAddLineToPoint(context, width * 0.2, height * 0.6);
+    CGContextAddLineToPoint(context, width * 0.2 - 2, height * 0.6 + 2);
     CGContextStrokePath(context);
-    /*
-    CGContextSetRGBFillColor(context, 255.0 / 255.0, 255.0 / 255.0, 255.0 / 255.0, 1.0);
-    CGContextFillRect(context, CGRectMake((width - kDotSize) / 2.0,
-                                          (height - kDotSize - kDotInterSpace) / 2.0,
-                                          kDotSize, kDotSize));
-    CGContextFillRect(context, CGRectMake((width - kDotSize) / 2.0,
-                                          (height - kDotSize + kDotInterSpace) / 2.0,
-                                          kDotSize, kDotSize));*/
     CGContextRestoreGState(context);
 }
 
