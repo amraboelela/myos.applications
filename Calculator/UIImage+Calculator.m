@@ -15,7 +15,7 @@
  Amr Aboelela <amraboelela@gmail.com>
  */
 
-#import @"UIImage+Calculator.h"
+#import "UIImage+Calculator.h"
 
 @implementation UIImage (Calculator)
 

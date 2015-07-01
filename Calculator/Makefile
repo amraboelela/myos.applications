@@ -29,5 +29,6 @@ OBJECTS = \
     CalcFace.o \
     DivideView.o \
     SqaureRootView.o \
+    UIImage+Calculator.o \
 
 include ${MYOS_PATH}/sdk/app-makefile
