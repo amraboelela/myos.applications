@@ -32,6 +32,10 @@
 
 #define kButtonMargin   2
 
+#define RGB(r,g,b)		[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+#define DarkGrayColor		RGB(44,49,52)
+#define DarkBlueColor		RGB(0,0,150)
+
 @implementation CalcFace
 
 #pragma mark - Life cycle
@@ -71,6 +75,7 @@
     }
     for (i=11; i < 25; i++) {
         _buttons[i].backgroundColor = [UIColor grayColor];
+        [_buttons[i] setBackgroundImage:[UIImage makeImageFromColor:DarkGrayColor] forState:UIControlStateHighlighted];
     }
     for (i=0; i < 10; i++) {
         _buttons[i].tag = i;
@@ -157,6 +162,7 @@
     [self setupButton:_buttons[23] atX:0 andY:0];
     [_buttons[24] setTitle:@"=" forState:UIControlStateNormal];
     _buttons[24].backgroundColor = [UIColor blueColor];
+    [_buttons[24] setBackgroundImage:[UIImage makeImageFromColor:DarkBlueColor] forState:UIControlStateHighlighted];
     [self setupButton:_buttons[24] atX:3 andY:6];
     
     for (i = 0; i < 25; i++) {

@@ -31,6 +31,7 @@
 {
     if ((self = [super initWithFrame:frame])) {
         //DLog();
+       _userInteractionEnabled = NO;
         self.contentScaleFactor = [UIScreen mainScreen].scale;
     }
     //DLog(@"self: %@", self);

@@ -32,7 +32,8 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if ((self = [super initWithFrame:frame])) {
-        DLog();
+        //DLog();
+        _userInteractionEnabled = NO;
         self.contentScaleFactor = [UIScreen mainScreen].scale;
     }
     //DLog(@"self: %@", self);
@@ -48,7 +49,7 @@
  
 - (void)drawRect:(CGRect)rect
 {
-    DLog(@"rect: %@", NSStringFromCGRect(rect));
+    //DLog(@"rect: %@", NSStringFromCGRect(rect));
     float width = rect.size.width;
     float height = rect.size.height;
     CGContextRef context = UIGraphicsGetCurrentContext();
