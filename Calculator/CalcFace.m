@@ -28,6 +28,7 @@
 #import "CalcFace.h"
 #import "DivideView.h"
 #import "SqaureRootView.h"
+#import "UIImage+Calculator.h"
 
 #define kButtonMargin   2
 
@@ -66,6 +67,7 @@
     }
     for (i=0; i < 11; i++) {
         _buttons[i].backgroundColor = [UIColor lightGrayColor];
+        [_buttons[i] setBackgroundImage:[UIImage makeImageFromColor:[UIColor grayColor]] forState:UIControlStateHighlighted];
     }
     for (i=11; i < 25; i++) {
         _buttons[i].backgroundColor = [UIColor grayColor];
