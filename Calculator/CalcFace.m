@@ -38,6 +38,8 @@
 
 @implementation CalcFace
 
+@synthesize calcBrain=_calcBrain;
+
 #pragma mark - Life cycle
 
 - (id)initWithFrame:(CGRect)frame
@@ -46,6 +48,9 @@
     if (!self) {
         return nil;
     }
+    self.calcBrain = [[[CalcBrain alloc] init] autorelease];
+    [_calcBrain setFace:self];
+    
     int i;
     _buttonSize = (frame.size.width - kButtonMargin) / 4.0 - kButtonMargin;
     //DLog(@"_buttonSize: %.2f", _buttonSize);
@@ -72,6 +77,7 @@
     for (i=0; i < 11; i++) {
         _buttons[i].backgroundColor = [UIColor lightGrayColor];
         [_buttons[i] setBackgroundImage:[UIImage makeImageFromColor:[UIColor grayColor]] forState:UIControlStateHighlighted];
+        [_buttons[i] addTarget:_calcBrain action:@selector(digit:) forControlEvents:UIControlEventTouchUpInside];
     }
     for (i=11; i < 25; i++) {
         _buttons[i].backgroundColor = [UIColor grayColor];

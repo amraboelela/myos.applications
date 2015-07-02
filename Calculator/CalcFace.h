@@ -30,13 +30,13 @@
 @interface CalcFace: UIView {
     UIButton *_buttons[25];
     UILabel *_display;
-    //CalcBrain *calcBrain;
+    CalcBrain *_calcBrain;
     float _initialX;
     float _initialY;
     float _buttonSize;
 }
 
-//@property (retain) CalcBrain *calcBrain;
+@property (retain) CalcBrain *calcBrain;
 
 // Set the corresponding brain
 - (void)setBrain:(CalcBrain *)aBrain;
