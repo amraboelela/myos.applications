@@ -82,6 +82,7 @@
     for (i=11; i < 25; i++) {
         _buttons[i].backgroundColor = [UIColor grayColor];
         [_buttons[i] setBackgroundImage:[UIImage makeImageFromColor:DarkGrayColor] forState:UIControlStateHighlighted];
+        //[_buttons[i] addTarget:_calcBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
     }
     for (i=0; i < 10; i++) {
         _buttons[i].tag = i;
@@ -110,6 +111,7 @@
     //aFrame.size.height = viewSize.height;
     //DLog(@"aFrame 2: %@", NSStringFromCGRect(aFrame));
     sqaureRootView.frame = aFrame;
+    [_buttons[11] addTarget:_calcBrain action:@selector(squareRoot:) forControlEvents:UIControlEventTouchUpInside];
     
     [_buttons[12] setTitle:@"sin" forState:UIControlStateNormal];
     [self setupButton:_buttons[12] atX:1 andY:1];
@@ -166,6 +168,7 @@
     //DLog(); 
     [_buttons[23] setTitle:@"CL" forState:UIControlStateNormal];
     [self setupButton:_buttons[23] atX:0 andY:0];
+    [_buttons[23] addTarget:_calcBrain action:@selector(clear:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[24] setTitle:@"=" forState:UIControlStateNormal];
     _buttons[24].backgroundColor = [UIColor blueColor];
     [_buttons[24] setBackgroundImage:[UIImage makeImageFromColor:DarkBlueColor] forState:UIControlStateHighlighted];
@@ -192,6 +195,7 @@
 
 #pragma mark - Accessors
 
+/*
 - (void)setBrain:(CalcBrain *)aBrain
 {
     DLog(@"aBrain: %@", aBrain);
@@ -200,21 +204,21 @@
     }
     [_buttons[10] addTarget:aBrain action:@selector(decimalSeparator:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[11] addTarget:aBrain action:@selector(squareRoot:) forControlEvents:UIControlEventTouchUpInside];
-/*    [_buttons[12] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
+    [_buttons[12] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[13] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[14] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[15] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[16] addTarget:aBrain action:@selector(clear:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[17] addTarget:aBrain action:@selector(equal:) forControlEvents:UIControlEventTouchUpInside];
-*/
-}
+
+}*/
 
 - (void)setDisplayedNumber:(double)aNumber withSeparator:(BOOL)_displayDecimalSeparator fractionalDigits:(int)fractionalDigits
 {
     if (_displayDecimalSeparator) {
-        _display.text = [NSString stringWithFormat:[NSString stringWithFormat:@"%%#.%df", fractionalDigits], aNumber];
+        _display.text = [NSString stringWithFormat:[NSString stringWithFormat:@"%%#.%df ", fractionalDigits], aNumber];
     } else { // !_displayDecimalSeparator
-        _display.text = [NSString stringWithFormat: @"%.0f", aNumber];
+        _display.text = [NSString stringWithFormat: @"%.0f ", aNumber];
     }
 }
 

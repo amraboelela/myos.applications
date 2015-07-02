@@ -107,7 +107,7 @@
             break;
     }
     [_face setDisplayedNumber:_result
-               withSeparator:(ceil(result) != result)
+               withSeparator:(ceil(_result) != _result)
             fractionalDigits:7];
     _enteredNumber = _result;
     _operation = none;
@@ -116,7 +116,8 @@
 
 - (void)digit:(id)sender
 {
-    DLog();
+    //DLog();
+    //DLog(@"sender: %@", sender);
     if (!_editing) {
         _enteredNumber = 0;
         _decimalSeparator = NO;
@@ -125,7 +126,7 @@
     }
     if (_decimalSeparator) {
         _enteredNumber = _enteredNumber
-        + ([sender tag] * pow (0.1, 1+fractionalDigits));
+        + ([sender tag] * pow (0.1, 1+_fractionalDigits));
         _fractionalDigits++;
     } else {
         _enteredNumber = _enteredNumber * 10 + ([sender tag]);
@@ -135,7 +136,7 @@
             return;
         }
     }
-    [_face setDisplayedNumber:enteredNumber withSeparator:decimalSeparator fractionalDigits:fractionalDigits];
+    [_face setDisplayedNumber:_enteredNumber withSeparator:_decimalSeparator fractionalDigits:_fractionalDigits];
 }
 
 - (void)decimalSeparator:(id)sender
@@ -149,7 +150,7 @@
     }
     if (!_decimalSeparator) {
         _decimalSeparator = YES;
-        [_face setDisplayedNumber:enteredNumber withSeparator:YES fractionalDigits:0];
+        [_face setDisplayedNumber:_enteredNumber withSeparator:YES fractionalDigits:0];
     }
 }
 
@@ -157,7 +158,7 @@
 {
     DLog();
     if (_operation == none) {
-        _result = enteredNumber;
+        _result = _enteredNumber;
         _enteredNumber = 0;
         _decimalSeparator = NO;
         _fractionalDigits = 0;
@@ -170,14 +171,17 @@
 
 - (void)squareRoot:(id)sender
 {
-    DLog();
+    //DLog();
     if (_operation == none) {
+        DLog(@"_enteredNumber: %.2f", _enteredNumber);
         _result = sqrt(_enteredNumber);
-        [_face setDisplayedNumber:result withSeparator:(ceil(_result)!=_result) fractionalDigits:7];
+        DLog(@"_result: %.2f", _result);
+        [_face setDisplayedNumber:_result withSeparator:(ceil(_result)!=_result) fractionalDigits:7];
         _enteredNumber = _result;
         _editing = NO;
         _operation = none;
     } else { // operation
+        DLog();
         [self equal:nil];
         [self squareRoot:sender];
     }
