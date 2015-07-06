@@ -23,9 +23,9 @@
    along with this program; if not, write to the Free Software
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA. */
 
-#import "CalcTypes.h"
+//#import "CalcTypes.h"
 
-@class CalcBrain;
+#import "CalcBrain.h"
 
 @interface CalcFace: UIView {
     UIButton *_buttons[25];
@@ -46,8 +46,6 @@
           fractionalDigits:(int)fractionalDigits;
 // Tell the user a calculation error occurred
 - (void)setError;
-// Display the window after launching the app
-//- (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
 
 @end
 

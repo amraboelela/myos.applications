@@ -81,23 +81,23 @@
 {
     DLog();
     switch (_operation) {
-        case none:
+        case CalcBrainOperationNone:
             _result = _enteredNumber;
             _enteredNumber = 0;
             _decimalSeparator = NO;
             _fractionalDigits = 0;
             return;
             break;
-        case addition:
+        case CalcBrainOperationAddition:
             _result = _result + _enteredNumber;
             break;
-        case subtraction:
+        case CalcBrainOperationSubtraction:
             _result = _result - _enteredNumber;
             break;
-        case multiplication:
+        case CalcBrainOperationMultiplication:
             _result = _result * _enteredNumber;
             break;
-        case division:
+        case CalcBrainOperationDivision:
             if (_enteredNumber == 0) {
                 [self error];
                 return;
@@ -105,10 +105,13 @@
                 _result = _result / _enteredNumber;
             }
             break;
+        case CalcBrainOperationPower:
+            _result = pow(_result, _enteredNumber);
+            break;
+        default:
+            break;
     }
-    [_face setDisplayedNumber:_result
-               withSeparator:(ceil(_result) != _result)
-            fractionalDigits:7];
+    [_face setDisplayedNumber:_result withSeparator:(ceil(_result) != _result) fractionalDigits:7];
     _enteredNumber = _result;
     _operation = none;
     _editing = NO;
@@ -126,10 +129,10 @@
     }
     if (_decimalSeparator) {
         _enteredNumber = _enteredNumber
-        + ([sender tag] * pow (0.1, 1+_fractionalDigits));
+        + (sender.tag * pow (0.1, 1+_fractionalDigits));
         _fractionalDigits++;
     } else {
-        _enteredNumber = _enteredNumber * 10 + ([sender tag]);
+        _enteredNumber = _enteredNumber * 10 + sender.tag;
         // Check overflow
         if (_enteredNumber > pow (10, 15)) {
             [self error];
@@ -162,19 +165,40 @@
         _enteredNumber = 0;
         _decimalSeparator = NO;
         _fractionalDigits = 0;
-        _operation = [sender tag];
+        _operation = sender.tag;
     } else { // operation
         [self equal:nil];
         [self operation:sender];
     }
 }
 
-- (void)squareRoot:(id)sender
+- (void)unaryOpertion:(id)sender
 {
     //DLog();
     if (_operation == none) {
         DLog(@"_enteredNumber: %.2f", _enteredNumber);
-        _result = sqrt(_enteredNumber);
+        switch (sender.tag) {
+            case CalcBrainUnaryOperationSqaureRoot:
+                _result = sqrt(_enteredNumber);
+                break;
+            case CalcBrainUnaryOperationSine:
+                _result = sin(_enteredNumber);
+                break;
+            case CalcBrainUnaryOperationCosine:
+                _result = cos(_enteredNumber);
+                break;
+            case CalcBrainUnaryOperationTangant:
+                _result = tan(_enteredNumber);
+                break;
+            case CalcBrainUnaryOperationLog:
+                _result = log10(_enteredNumber);
+                break;
+            case CalcBrainUnaryOperationLn:
+                _result = log(_enteredNumber);
+                break;
+            default:
+                break;
+        }
         DLog(@"_result: %.2f", _result);
         [_face setDisplayedNumber:_result withSeparator:(ceil(_result)!=_result) fractionalDigits:7];
         _enteredNumber = _result;
@@ -183,8 +207,24 @@
     } else { // operation
         DLog();
         [self equal:nil];
-        [self squareRoot:sender];
+        [self unaryOpertion:sender];
     }
+}
+
+- (void)normalNumber:(id)sender
+{
+    DLog();
+    /*if (!_editing) {
+     _enteredNumber = 0;
+     _decimalSeparator = NO;
+     _fractionalDigits = 0;
+     _editing = YES;
+     }
+     if (!_decimalSeparator) {*/
+    _decimalSeparator = YES;
+    _enteredNumber = 2.71828182846;
+    [_face setDisplayedNumber:_enteredNumber withSeparator:YES fractionalDigits:0];
+    //}
 }
 
 - (void)error

@@ -23,8 +23,26 @@
    along with this program; if not, write to the Free Software
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA. */
 
-#include "CalcTypes.h"
+//#include "CalcTypes.h"
 @class CalcFace;
+
+typedef enum {
+    CalcBrainOperationNone,
+    CalcBrainOperationAddition,
+    CalcBrainOperationSubtraction,
+    CalcBrainOperationMultiplication,
+    CalcBrainOperationDivision,
+    CalcBrainOperationPower,
+} CalcBrainOperation;
+
+typedef enum {
+    CalcBrainUnaryOperationSqaureRoot,
+    CalcBrainUnaryOperationSine,
+    CalcBrainUnaryOperationCosine,
+    CalcBrainUnaryOperationTangant,
+    CalcBrainUnaryOperationLog,
+    CalcBrainUnaryOperationLn,
+} CalcBrainUnaryOperation;
 
 @interface CalcBrain: NSObject {
   CalcFace *_face;
@@ -44,7 +62,8 @@
 - (void)digit:(id)sender;
 - (void)decimalSeparator:(id)sender;
 - (void)operation:(id)sender;
-- (void)squareRoot:(id)sender;
+- (void)unaryOpertion:(id)sender;
+- (void)normalNumber:(id)sender;
 // Jump here on calculation errors
 - (void)error;
 

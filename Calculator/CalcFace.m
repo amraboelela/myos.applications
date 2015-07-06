@@ -74,7 +74,7 @@
         _buttons[i] = [UIButton buttonWithType:UIButtonTypeCustom];
         _buttons[i].titleLabel.font = [UIFont systemFontOfSize:28];
     }
-    for (i=0; i < 11; i++) {
+    for (i=0; i < 10; i++) {
         _buttons[i].backgroundColor = [UIColor lightGrayColor];
         [_buttons[i] setBackgroundImage:[UIImage makeImageFromColor:[UIColor grayColor]] forState:UIControlStateHighlighted];
         [_buttons[i] addTarget:_calcBrain action:@selector(digit:) forControlEvents:UIControlEventTouchUpInside];
@@ -97,7 +97,10 @@
 
     [_buttons[10] setTitle:@"." forState:UIControlStateNormal];
     [self setupButton:_buttons[10] atX:2 andY:6];
-    //_buttons[10].frame = CGRectMake(_initialX + (kButtonMargin + _buttonSize) * 2, _initialY + (kButtonMargin + _buttonSize) * 4, _buttonSize, _buttonSize);
+    _buttons[10].backgroundColor = [UIColor lightGrayColor];
+    [_buttons[10] setBackgroundImage:[UIImage makeImageFromColor:[UIColor grayColor]] forState:UIControlStateHighlighted];
+    [_buttons[10] addTarget:_calcBrain action:@selector(decimalSeparator:) forControlEvents:UIControlEventTouchUpInside];
+    
     [_buttons[11] setTitle:@"" forState:UIControlStateNormal];
     [self setupButton:_buttons[11] atX:0 andY:1];
     SqaureRootView *sqaureRootView = [[[SqaureRootView alloc] init] autorelease];
@@ -111,16 +114,24 @@
     //aFrame.size.height = viewSize.height;
     //DLog(@"aFrame 2: %@", NSStringFromCGRect(aFrame));
     sqaureRootView.frame = aFrame;
-    [_buttons[11] addTarget:_calcBrain action:@selector(squareRoot:) forControlEvents:UIControlEventTouchUpInside];
+    [_buttons[11] addTarget:_calcBrain action:@selector(unaryOpertion:) forControlEvents:UIControlEventTouchUpInside];
     
     [_buttons[12] setTitle:@"sin" forState:UIControlStateNormal];
     [self setupButton:_buttons[12] atX:1 andY:1];
+    _buttons[12].tag = CalcBrainUnaryOperationSine;
+    [_buttons[12] addTarget:_calcBrain action:@selector(unaryOpertion:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[13] setTitle:@"cos" forState:UIControlStateNormal];
     [self setupButton:_buttons[13] atX:2 andY:1];
+    _buttons[13].tag = CalcBrainUnaryOperationCosine;
+    [_buttons[13] addTarget:_calcBrain action:@selector(unaryOpertion:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[14] setTitle:@"tan" forState:UIControlStateNormal];
     [self setupButton:_buttons[14] atX:3 andY:1];
+    _buttons[14].tag = CalcBrainUnaryOperationTangant;
+    [_buttons[14] addTarget:_calcBrain action:@selector(unaryOpertion:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[15] setTitle:@"x " forState:UIControlStateNormal];
     [self setupButton:_buttons[15] atX:0 andY:2];
+    _buttons[15].tag = CalcBrainOperationPower;
+    [_buttons[15] addTarget:_calcBrain action:@selector(opertion:) forControlEvents:UIControlEventTouchUpInside];
     _buttons[15].titleLabel.font = [UIFont systemFontOfSize:22];
     UILabel *yLabel = [[[UILabel alloc] init] autorelease];
     yLabel.font = [UIFont systemFontOfSize:12];
@@ -137,22 +148,31 @@
 
     [_buttons[16] setTitle:@"e" forState:UIControlStateNormal];
     [self setupButton:_buttons[16] atX:1 andY:2];
+    [_buttons[16] addTarget:_calcBrain action:@selector(normalNumber:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[17] setTitle:@"ln" forState:UIControlStateNormal];
     [self setupButton:_buttons[17] atX:2 andY:2];
+    _buttons[17].tag = CalcBrainUnaryOperationLn;
+    [_buttons[17] addTarget:_calcBrain action:@selector(unaryOpertion:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[18] setTitle:@"log" forState:UIControlStateNormal];
     [self setupButton:_buttons[18] atX:3 andY:2];
+    _buttons[18].tag = CalcBrainUnaryOperationLog;
+    [_buttons[18] addTarget:_calcBrain action:@selector(unaryOpertion:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[19] setTitle:@"+" forState:UIControlStateNormal];
-    [_buttons[19] setTag:addition];
+    _buttons[19].tag = CalcBrainOperationAddition;
+    [_buttons[19] addTarget:_calcBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
     [self setupButton:_buttons[19] atX:0 andY:6];
     [_buttons[20] setTitle:@"-" forState:UIControlStateNormal];
-    [_buttons[20] setTag:subtraction];
+    _buttons[20].tag = CalcBrainOperationSubtraction;
     [self setupButton:_buttons[20] atX:0 andY:5];
+    [_buttons[20] addTarget:_calcBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[21] setTitle:@"x" forState:UIControlStateNormal];
-    [_buttons[21] setTag:multiplication];
+    _buttons[21].tag = CalcBrainOperationMultiplication;
     [self setupButton:_buttons[21] atX:0 andY:4];
+    [_buttons[21] addTarget:_calcBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
     [_buttons[22] setTitle:@"" forState:UIControlStateNormal];
-    [_buttons[22] setTag:division];
+    _buttons[22].tag = CalcBrainOperationDivision;
     [self setupButton:_buttons[22] atX:0 andY:3];
+    [_buttons[22] addTarget:_calcBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
     
     DivideView *divideView = [[[DivideView alloc] init] autorelease];
     viewSize = CGSizeMake(40, 40);
@@ -173,6 +193,7 @@
     _buttons[24].backgroundColor = [UIColor blueColor];
     [_buttons[24] setBackgroundImage:[UIImage makeImageFromColor:DarkBlueColor] forState:UIControlStateHighlighted];
     [self setupButton:_buttons[24] atX:3 andY:6];
+    [_buttons[24] addTarget:_calcBrain action:@selector(equal:) forControlEvents:UIControlEventTouchUpInside];
     
     for (i = 0; i < 25; i++) {
         [self addSubview:_buttons[i]];
