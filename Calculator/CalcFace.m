@@ -112,7 +112,6 @@
     aFrame.origin.y += (aFrame.size.height - viewSize.height) / 2.0;
     aFrame.size = viewSize;
     //aFrame.size.height = viewSize.height;
-    //DLog(@"aFrame 2: %@", NSStringFromCGRect(aFrame));
     sqaureRootView.frame = aFrame;
     [_buttons[11] addTarget:_calcBrain action:@selector(unaryOpertion:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -131,7 +130,7 @@
     [_buttons[15] setTitle:@"x " forState:UIControlStateNormal];
     [self setupButton:_buttons[15] atX:0 andY:2];
     _buttons[15].tag = CalcBrainOperationPower;
-    [_buttons[15] addTarget:_calcBrain action:@selector(opertion:) forControlEvents:UIControlEventTouchUpInside];
+    [_buttons[15] addTarget:_calcBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
     _buttons[15].titleLabel.font = [UIFont systemFontOfSize:22];
     UILabel *yLabel = [[[UILabel alloc] init] autorelease];
     yLabel.font = [UIFont systemFontOfSize:12];
@@ -178,14 +177,11 @@
     viewSize = CGSizeMake(40, 40);
     //viewHeight = 40;
     aFrame = _buttons[22].frame;
-    //DLog(@"aFrame: %@", NSStringFromCGRect(aFrame));
     aFrame.origin.x += (aFrame.size.width - viewSize.width) / 2.0;
     aFrame.origin.y += (aFrame.size.height - viewSize.height) / 2.0;
     aFrame.size = viewSize;
     //aFrame.size.height = viewSize.height;
-    //DLog(@"aFrame 2: %@", NSStringFromCGRect(aFrame));
     divideView.frame = aFrame;
-    //DLog(); 
     [_buttons[23] setTitle:@"CL" forState:UIControlStateNormal];
     [self setupButton:_buttons[23] atX:0 andY:0];
     [_buttons[23] addTarget:_calcBrain action:@selector(clear:) forControlEvents:UIControlEventTouchUpInside];
@@ -199,7 +195,6 @@
         [self addSubview:_buttons[i]];
         //DLog(@"_buttons[%d]: %@", i, _buttons[i]);
     }
-    //DLog();
     [self addSubview:_display];
     [self addSubview:sqaureRootView];
     [self addSubview:yLabel];
@@ -216,28 +211,14 @@
 
 #pragma mark - Accessors
 
-/*
-- (void)setBrain:(CalcBrain *)aBrain
-{
-    DLog(@"aBrain: %@", aBrain);
-    for (int i = 0; i < 10; i++) {
-        [_buttons[i] addTarget:aBrain action:@selector(digit:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    [_buttons[10] addTarget:aBrain action:@selector(decimalSeparator:) forControlEvents:UIControlEventTouchUpInside];
-    [_buttons[11] addTarget:aBrain action:@selector(squareRoot:) forControlEvents:UIControlEventTouchUpInside];
-    [_buttons[12] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
-    [_buttons[13] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
-    [_buttons[14] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
-    [_buttons[15] addTarget:aBrain action:@selector(operation:) forControlEvents:UIControlEventTouchUpInside];
-    [_buttons[16] addTarget:aBrain action:@selector(clear:) forControlEvents:UIControlEventTouchUpInside];
-    [_buttons[17] addTarget:aBrain action:@selector(equal:) forControlEvents:UIControlEventTouchUpInside];
-
-}*/
-
 - (void)setDisplayedNumber:(double)aNumber withSeparator:(BOOL)_displayDecimalSeparator fractionalDigits:(int)fractionalDigits
 {
     if (_displayDecimalSeparator) {
         _display.text = [NSString stringWithFormat:[NSString stringWithFormat:@"%%#.%df ", fractionalDigits], aNumber];
+        if (_display.text.length > 14) {
+            _display.text = [_display.text substringToIndex:14];
+            _display.text = [NSString stringWithFormat:@"%@ ", _display.text];
+        }
     } else { // !_displayDecimalSeparator
         _display.text = [NSString stringWithFormat: @"%.0f ", aNumber];
     }

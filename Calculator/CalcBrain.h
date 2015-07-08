@@ -48,7 +48,7 @@ typedef enum {
   CalcFace *_face;
   double _result;
   double _enteredNumber;
-  calcOperation _operation;
+  CalcBrainOperation _operation;
   int _fractionalDigits;
   BOOL _decimalSeparator;
   BOOL _editing;
@@ -59,10 +59,10 @@ typedef enum {
 // The various buttons 
 - (void)clear:(id)sender;
 - (void)equal:(id)sender;
-- (void)digit:(id)sender;
+- (void)digit:(UIView *)sender;
 - (void)decimalSeparator:(id)sender;
-- (void)operation:(id)sender;
-- (void)unaryOpertion:(id)sender;
+- (void)operation:(UIView *)sender;
+- (void)unaryOpertion:(UIView *)sender;
 - (void)normalNumber:(id)sender;
 // Jump here on calculation errors
 - (void)error;

@@ -29,6 +29,8 @@
 #include "CalcFace.h"
 #include <math.h>
 
+#define MaxFractionalDigits	11
+
 @implementation CalcBrain
 
 #pragma mark - Life cycle
@@ -38,7 +40,7 @@
     [super init];
     _result = 0;
     _enteredNumber = 0;
-    _operation = none;
+    _operation = CalcBrainOperationNone;
     _fractionalDigits = 0;
     _decimalSeparator = NO;
     _editing = YES;
@@ -59,7 +61,6 @@
 // Set the corresponding face
 - (void)setFace:(CalcFace *)aFace
 {
-    DLog();
     _face = [aFace retain];
     [_face setDisplayedNumber:_enteredNumber withSeparator:_decimalSeparator fractionalDigits:_fractionalDigits];
 }
@@ -67,10 +68,9 @@
 // The various buttons 
 - (void)clear:(id)sender
 {
-    DLog();
     _result = 0;
     _enteredNumber = 0;
-    _operation = none;
+    _operation = CalcBrainOperationNone;
     _fractionalDigits = 0;
     _decimalSeparator = NO;
     _editing = YES;
@@ -79,7 +79,10 @@
 
 - (void)equal:(id)sender
 {
-    DLog();
+    //DLog(@"_enteredNumber: %.2f", _enteredNumber);
+    if (_enteredNumber == 0) {
+        _enteredNumber = _result;
+    }
     switch (_operation) {
         case CalcBrainOperationNone:
             _result = _enteredNumber;
@@ -111,15 +114,14 @@
         default:
             break;
     }
-    [_face setDisplayedNumber:_result withSeparator:(ceil(_result) != _result) fractionalDigits:7];
+    [_face setDisplayedNumber:_result withSeparator:(ceil(_result) != _result) fractionalDigits:MaxFractionalDigits];
     _enteredNumber = _result;
-    _operation = none;
+    _operation = CalcBrainOperationNone;
     _editing = NO;
 }
 
-- (void)digit:(id)sender
+- (void)digit:(UIView *)sender
 {
-    //DLog();
     //DLog(@"sender: %@", sender);
     if (!_editing) {
         _enteredNumber = 0;
@@ -128,8 +130,7 @@
         _editing = YES;
     }
     if (_decimalSeparator) {
-        _enteredNumber = _enteredNumber
-        + (sender.tag * pow (0.1, 1+_fractionalDigits));
+        _enteredNumber = _enteredNumber + (sender.tag * pow (0.1, 1+_fractionalDigits));
         _fractionalDigits++;
     } else {
         _enteredNumber = _enteredNumber * 10 + sender.tag;
@@ -144,7 +145,6 @@
 
 - (void)decimalSeparator:(id)sender
 {
-    DLog();
     if (!_editing) {
         _enteredNumber = 0;
         _decimalSeparator = NO;
@@ -157,10 +157,9 @@
     }
 }
 
-- (void)operation:(id)sender
+- (void)operation:(UIView *)sender
 {
-    DLog();
-    if (_operation == none) {
+    if (_operation == CalcBrainOperationNone) {
         _result = _enteredNumber;
         _enteredNumber = 0;
         _decimalSeparator = NO;
@@ -172,23 +171,23 @@
     }
 }
 
-- (void)unaryOpertion:(id)sender
+- (void)unaryOpertion:(UIView *)sender
 {
     //DLog();
-    if (_operation == none) {
-        DLog(@"_enteredNumber: %.2f", _enteredNumber);
+    if (_operation == CalcBrainOperationNone) {
+        //DLog(@"_enteredNumber: %.2f", _enteredNumber);
         switch (sender.tag) {
             case CalcBrainUnaryOperationSqaureRoot:
                 _result = sqrt(_enteredNumber);
                 break;
             case CalcBrainUnaryOperationSine:
-                _result = sin(_enteredNumber);
+                _result = sin(_enteredNumber * M_PI / 180.0);
                 break;
             case CalcBrainUnaryOperationCosine:
-                _result = cos(_enteredNumber);
+                _result = cos(_enteredNumber * M_PI / 180.0);
                 break;
             case CalcBrainUnaryOperationTangant:
-                _result = tan(_enteredNumber);
+                _result = tan(_enteredNumber * M_PI / 180.0);
                 break;
             case CalcBrainUnaryOperationLog:
                 _result = log10(_enteredNumber);
@@ -199,13 +198,14 @@
             default:
                 break;
         }
-        DLog(@"_result: %.2f", _result);
-        [_face setDisplayedNumber:_result withSeparator:(ceil(_result)!=_result) fractionalDigits:7];
+        //DLog(@"_result: %.2f", _result);
+        //_fractionalDigits = MaxFractionalDigits;
+        [_face setDisplayedNumber:_result withSeparator:(ceil(_result)!=_result) fractionalDigits:MaxFractionalDigits];
         _enteredNumber = _result;
         _editing = NO;
-        _operation = none;
+        _operation = CalcBrainOperationNone;
     } else { // operation
-        DLog();
+        //DLog();
         [self equal:nil];
         [self unaryOpertion:sender];
     }
@@ -213,7 +213,7 @@
 
 - (void)normalNumber:(id)sender
 {
-    DLog();
+    //DLog();
     /*if (!_editing) {
      _enteredNumber = 0;
      _decimalSeparator = NO;
@@ -223,16 +223,16 @@
      if (!_decimalSeparator) {*/
     _decimalSeparator = YES;
     _enteredNumber = 2.71828182846;
-    [_face setDisplayedNumber:_enteredNumber withSeparator:YES fractionalDigits:0];
+    _fractionalDigits = MaxFractionalDigits;
+    [_face setDisplayedNumber:_enteredNumber withSeparator:YES fractionalDigits:_fractionalDigits];
     //}
 }
 
 - (void)error
 {
-    DLog();
     _result = 0;
     _enteredNumber = 0;
-    _operation = none;
+    _operation = CalcBrainOperationNone;
     _fractionalDigits = 0;
     _decimalSeparator = NO;
     _editing = YES;
