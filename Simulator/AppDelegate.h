@@ -16,12 +16,12 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "LoadingScreenVC.h"
-#import "LauncherVC.h"
+//#import "LoadingScreenVC.h"
+//#import "LauncherVC.h"
 
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *_window;
-    LauncherVC *_launcherVC;
+    //LauncherVC *_launcherVC;
 }
 
 @property (nonatomic, retain) UIWindow *window;
