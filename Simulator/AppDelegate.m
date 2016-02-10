@@ -63,12 +63,13 @@
 
 - (void)homeButtonClicked:(id)sender
 {
+    DLog();
     //[_launcherVC gotoHomepage];
 }
 
 - (void)backButtonClicked:(id)sender
 {
-    DLog();s
+    DLog();
 }
 
 #pragma mark - Public functions
