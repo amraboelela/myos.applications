@@ -48,7 +48,7 @@
     [_window makeKeyAndVisible];
     
     //DLog(@"self: %@", self);
-    //[self performSelector:@selector(loadViews) withObject:nil afterDelay:0.01];
+    [self performSelector:@selector(runMyApps) withObject:nil afterDelay:0.01];
     return YES;
 }
 
@@ -72,6 +72,12 @@
     DLog();
 }
 
-#pragma mark - Public functions
+#pragma mark - Private functions
+
+- (void)runMyApps
+{
+    DLog();
+}
 
 @end
+
