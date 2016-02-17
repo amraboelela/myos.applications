@@ -16,8 +16,8 @@
  */
 
 #import "AppDelegate.h"
-//#import "FileManager.h"
 #import "FooterView.h"
+#import <UIKit/UIParentApplicationProxy.h>
 
 @implementation AppDelegate
 
@@ -77,6 +77,9 @@
 - (void)runMyApps
 {
     DLog();
+    UIParentApplicationProxy *app = [[UIParentApplicationProxy alloc] initWithBundleName:@"myApps"
+                                                                            andPath:_NSFileManagerMyAppsPath()];
+    [app startApp];
 }
 
 @end
