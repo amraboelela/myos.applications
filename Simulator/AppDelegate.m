@@ -77,9 +77,9 @@
 - (void)runMyApps
 {
     DLog();
-    //UIParentApplicationProxy *app = [[UIParentApplicationProxy alloc] initWithBundleName:@"myApps"
+    UIParentApplicationProxy *app = [[UIParentApplicationProxy alloc] initWithBundleName:@"myApps"
                                                                             andPath:_NSFileManagerMyAppsPath()];
-    //[app startApp];
+    [app startApp];
 }
 
 @end
