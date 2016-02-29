@@ -18,6 +18,7 @@
 #import "AppDelegate.h"
 #import "FooterView.h"
 #import <UIKit/UIParentApplicationProxy.h>
+#import <IOKit/IOKit.h>
 
 @implementation AppDelegate
 
@@ -64,12 +65,13 @@
 - (void)homeButtonClicked:(id)sender
 {
     DLog();
-    //[_launcherVC gotoHomepage];
+    IOPipeWriteMessage(ParentPipeMessageHomeButtonClicked, YES);
 }
 
 - (void)backButtonClicked:(id)sender
 {
     DLog();
+    IOPipeWriteMessage(ParentPipeMessageBackButtonClicked, YES);
 }
 
 #pragma mark - Private functions
