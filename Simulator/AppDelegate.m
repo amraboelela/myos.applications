@@ -64,13 +64,13 @@
 
 - (void)homeButtonClicked:(id)sender
 {
-    DLog();
+    //DLog();
     IOPipeWriteMessage(ParentPipeMessageHomeButtonClicked, YES);
 }
 
 - (void)backButtonClicked:(id)sender
 {
-    DLog();
+    //DLog();
     IOPipeWriteMessage(ParentPipeMessageBackButtonClicked, YES);
 }
 
@@ -78,7 +78,7 @@
 
 - (void)runMyApps
 {
-    DLog();
+    //DLog();
     UIParentApplicationProxy *app = [[UIParentApplicationProxy alloc] initWithBundleName:@"myApps"
                                                                             andPath:_NSFileManagerMyAppsPath()];
     [app startApp];
