@@ -8,11 +8,12 @@ else
 endif
 
 OBJECTS = \
-    AppDelegate.o \
-    CalcBrain.o \
-    CalcFace.o \
-    DivideView.o \
-    SqaureRootView.o \
-    UIImage+Calculator.o \
+    main \
+    AppDelegate \
+    CalcBrain \
+    CalcFace \
+    DivideView \
+    SqaureRootView \
+    UIImage+Calculator \
 
 include ${MYOS_PATH}/sdk/app-makefile
